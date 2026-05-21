@@ -105,7 +105,7 @@
       });
     }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    document.querySelectorAll('.card, .teacher, .feature, .schedule-item, .price-card, .testimonial').forEach(el => {
+    document.querySelectorAll('.card, .teacher, .feature, .feature-row, .schedule-item, .price-card, .testimonial').forEach(el => {
       el.style.opacity = '0';
       el.style.transform = 'translateY(20px)';
       el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
