@@ -23,6 +23,7 @@ EXPORTS = [
     ("hero-yoga-soul.svg", "451:781", "SVG", 1),
     ("logo.png", "435:182", "PNG", 3),
     ("hero-text.png", "451:780", "PNG", 1),
+    ("hero-title-export.png", "451:780", "PNG", 2),
     ("bento-meditazione.png", "435:313", "PNG", 1),
     ("bento-workshop.png", "435:325", "PNG", 1),
     ("bento-talks.png", "435:335", "PNG", 1),
@@ -34,6 +35,9 @@ EXPORTS = [
     ("artist-michael-jackson.png", "435:542", "PNG", 1),
     ("artist-sia.png", "435:558", "PNG", 1),
     ("artist-pino-daniele.png", "435:550", "PNG", 1),
+    ("icon-clock.png", "461:586", "PNG", 3),
+    ("icon-location.png", "461:598", "PNG", 3),
+    ("icon-leaves.svg", "468:1748", "SVG", 1),
 ]
 
 

@@ -1,14 +1,47 @@
 (function () {
   "use strict";
 
+  if (location.protocol === "file:") {
+    var note = document.createElement("div");
+    note.setAttribute("role", "alert");
+    note.style.cssText =
+      "position:fixed;bottom:0;left:0;right:0;padding:14px 16px;background:#333;color:#fff;font:14px/1.45 sans-serif;text-align:center;z-index:9999";
+    note.innerHTML =
+      'Per navigare tra le pagine avvia il server: <code style="background:#555;padding:2px 6px;border-radius:4px">./serve.sh</code> poi apri <a href="http://localhost:8765" style="color:#fff;font-weight:600">http://localhost:8765</a>';
+    document.body.appendChild(note);
+  }
+
   var navToggle = document.querySelector(".nav-toggle");
   var navLinks = document.querySelector(".navbar-links");
 
   if (navToggle && navLinks) {
+    function closeNav() {
+      navLinks.classList.remove("is-open");
+      navToggle.classList.remove("open");
+      navToggle.setAttribute("aria-expanded", "false");
+      document.body.classList.remove("nav-open");
+    }
+
     navToggle.addEventListener("click", function () {
-      var open = navLinks.classList.toggle("is-open");
-      navToggle.classList.toggle("open", open);
-      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
+      var open = !navLinks.classList.contains("is-open");
+      if (open) {
+        navLinks.classList.add("is-open");
+        navToggle.classList.add("open");
+        navToggle.setAttribute("aria-expanded", "true");
+        document.body.classList.add("nav-open");
+      } else {
+        closeNav();
+      }
+    });
+
+    navLinks.querySelectorAll("a").forEach(function (link) {
+      link.addEventListener("click", closeNav);
+    });
+
+    document.addEventListener("keydown", function (event) {
+      if (event.key === "Escape") {
+        closeNav();
+      }
     });
   }
 

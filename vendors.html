@@ -6,7 +6,7 @@
   <title>Vendors — Yoga Soul Festival</title>
   <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body class="page-vendors">
 <header class="navbar topbar">
     <div class="container navbar-inner">
       <a href="index.html" class="navbar-logo">
@@ -25,39 +25,54 @@
   </header>
 
   <main>
-    <section class="vendors-hero-section">
-      <div class="container container-content">
-        <div class="vendors-hero-overlay" style="background-image:url('https://images.unsplash.com/photo-1531058020387-3d344d9969f5?w=1400&q=80');">
-          <div>
-            <p class="eyebrow eyebrow-light">– Vendors –</p>
-            <h1 class="inner-page-title">Porta il tuo brand al festival.</h1>
-            <p class="inner-page-subtext">Cerchi visibilità o vuoi presentarti con un banchetto? Compila la pre-iscrizione: ti contatteremo per gli step successivi.</p>
-          </div>
-        </div>
+    <section class="vendors-hero">
+      <div class="vendors-hero-bg" style="background-image:url('https://images.unsplash.com/photo-1531058020387-3d344d9969f5?w=1400&q=80');"></div>
+      <div class="vendors-hero-scrim" aria-hidden="true"></div>
+      <div class="container container-content vendors-hero-content">
+        <p class="vendors-eyebrow">– Vendors –</p>
+        <h1 class="vendors-title">Porta il tuo brand al festival.</h1>
+        <p class="vendors-subtext">Cerchi visibilità o vuoi presentarti con un banchetto? Compila la pre-iscrizione: ti contatteremo per gli step successivi.</p>
       </div>
     </section>
-    <section class="section">
-      <div class="container container-content vendors-two-col">
+
+    <section class="section section-vendors">
+      <div class="container container-vendors vendors-two-col">
         <div class="vendors-benefits">
           <h2 class="vendors-heading">Cosa offriamo</h2>
-          <ul>
+          <ul class="vendors-benefits-list">
             <li>Spazio espositivo personalizzabile</li>
             <li>Visibilità sui canali ufficiali</li>
             <li>Pubblico in target con benessere e veg</li>
             <li>Inserimento nella mappa del festival</li>
             <li>Networking con altri brand del settore</li>
           </ul>
-          <p class="vendors-note">Prediligiamo realtà etiche, veg-friendly e sostenibili.</p>
+          <p class="vendors-note">
+            <img src="assets/figma/icon-leaves.svg" alt="" class="vendors-note-icon" width="24" height="24">
+            Prediligiamo realtà etiche, veg-friendly e sostenibili.
+          </p>
         </div>
         <form class="vendors-form" action="#" method="post">
           <h2 class="vendors-heading">Pre-iscrizione</h2>
-          <div><label for="nome">Nome e cognome</label><input id="nome" name="nome" type="text" required></div>
-          <div><label for="brand">Nome del brand/attività</label><input id="brand" name="brand" type="text" required></div>
-          <div class="vendors-form-row">
-            <div><label for="email">Email</label><input id="email" name="email" type="email" required></div>
-            <div><label for="telefono">Telefono (facoltativo)</label><input id="telefono" name="telefono" type="tel"></div>
+          <div class="vendors-field">
+            <label for="nome">Nome e cognome</label>
+            <input id="nome" name="nome" type="text" placeholder="Nome e cognome" required>
           </div>
-          <div><label for="tipo">Tipo di presenza</label>
+          <div class="vendors-field">
+            <label for="brand">Nome del brand/attività</label>
+            <input id="brand" name="brand" type="text" placeholder="Nome del brand/attività" required>
+          </div>
+          <div class="vendors-form-row">
+            <div class="vendors-field">
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" placeholder="Email" required>
+            </div>
+            <div class="vendors-field">
+              <label for="telefono">Telefono (facoltativo)</label>
+              <input id="telefono" name="telefono" type="tel" placeholder="Telefono">
+            </div>
+          </div>
+          <div class="vendors-field">
+            <label for="tipo">Tipo di presenza</label>
             <select id="tipo" name="tipo" required>
               <option value="">Seleziona...</option>
               <option value="stand">Stand espositivo</option>
@@ -65,8 +80,11 @@
               <option value="sponsor">Sponsor</option>
             </select>
           </div>
-          <div><label for="descrizione">Raccontaci la tua attività</label><textarea id="descrizione" name="descrizione" placeholder="Max 500 caratteri" maxlength="500"></textarea></div>
-          <button type="submit" class="btn btn-dark">Invia richiesta →</button>
+          <div class="vendors-field">
+            <label for="descrizione">Raccontaci la tua attività</label>
+            <textarea id="descrizione" name="descrizione" placeholder="Max 500 caratteri" maxlength="500"></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark vendors-submit">Invia richiesta →</button>
         </form>
       </div>
     </section>
