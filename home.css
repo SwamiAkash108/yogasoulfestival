@@ -61,39 +61,33 @@
   border-radius: 50px;
   min-height: 928px;
   padding: 160px 80px 120px;
-  background: radial-gradient(
-    ellipse 102% 102% at 0% 5%,
-    #d69e2e 0%,
-    #d53f8c 100%
-  );
+  background:
+    radial-gradient(ellipse 90% 70% at 15% 20%, rgba(255, 200, 80, 0.55) 0%, transparent 55%),
+    radial-gradient(ellipse 75% 60% at 85% 75%, rgba(180, 40, 100, 0.45) 0%, transparent 50%),
+    radial-gradient(ellipse 102% 102% at 0% 5%, #d69e2e 0%, #d53f8c 100%);
   overflow: hidden;
   display: flex;
   flex-direction: column;
+  align-items: center;
   justify-content: flex-start;
+  text-align: center;
 }
 
 .page-home .home-hero-box::before {
   display: none;
 }
 
-.page-home .home-hero-box::after {
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: url("assets/figma/hero-texture.png") center / cover no-repeat;
-  opacity: 0.2;
-  pointer-events: none;
-}
-
 .page-home .home-hero-box > * {
   position: relative;
   z-index: 1;
+  width: 100%;
   max-width: 1040px;
 }
 
 .page-home .hero-meta {
   display: flex;
   align-items: center;
+  justify-content: center;
   flex-wrap: wrap;
   gap: 16px;
   margin: 0;
@@ -119,25 +113,27 @@
 .page-home .hero-yoga-soul {
   margin: 0;
   font-family: var(--font-sacred);
-  font-size: clamp(80px, 14vw, 180px);
+  font-size: clamp(72px, 13vw, 180px);
   font-weight: 400;
-  line-height: 0.67;
+  line-height: 0.78;
   color: #fff;
+  white-space: nowrap;
 }
 
 .page-home .hero-title-festival {
-  margin: 0;
+  margin: 0.15em 0 0;
   font-family: var(--font-logo-sub);
-  font-size: clamp(28px, 4vw, 48px);
+  font-size: clamp(22px, 3.2vw, 48px);
   font-weight: 600;
-  letter-spacing: 0.28em;
+  letter-spacing: 0.42em;
   text-transform: uppercase;
   color: #fff;
-  line-height: 1.5;
+  line-height: 1.4;
 }
 
 .page-home .hero-subtitle {
-  margin-top: 48px;
+  margin: 48px auto 0;
+  max-width: 36ch;
   font-family: var(--font-body);
   font-size: clamp(18px, 2.2vw, 28px);
   font-weight: 400;
@@ -149,6 +145,7 @@
   margin-top: 48px;
   display: flex;
   flex-wrap: wrap;
+  justify-content: center;
   gap: 24px;
 }
 
