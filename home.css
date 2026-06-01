@@ -393,12 +393,23 @@
   border-radius: 20px;
   overflow: hidden;
   line-height: 0;
+  text-decoration: none;
+  color: inherit;
 }
 
-.page-home .ticket-figma img {
+.page-home .ticket-figma__media {
+  display: block;
+  line-height: 0;
+}
+
+.page-home .ticket-figma__media img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.page-home .ticket-figma__mobile-pass {
+  display: none;
 }
 
 .page-home .ticket-figma--wide {
@@ -406,26 +417,26 @@
   border-radius: 30px;
 }
 
-.page-home .ticket-figma--wide img {
+.page-home .ticket-figma--wide .ticket-figma__media img {
   border-radius: 30px;
 }
 
 /* Shared Figma export ratios for consistent mobile scaling */
 .page-home {
   --ticket-card-ratio: 1095 / 708;
-  --artist-card-ratio: 948 / 1298;
+  --artist-card-w: 320px;
   --vendor-banner-ratio: 1088 / 474;
 }
 
-/* ── Artists carousel (Figma card exports) ── */
+/* ── Artists carousel ── */
 .page-home .home-section--artists .container-content {
   overflow: visible;
 }
 
 .page-home .home-artists {
-  --artist-card-w: clamp(280px, 36vw, 340px);
   display: flex;
   flex-wrap: nowrap;
+  align-items: stretch;
   gap: 16px;
   overflow-x: auto;
   overscroll-behavior-x: contain;
@@ -442,22 +453,75 @@
   display: none;
 }
 
-.page-home .home-artist-figma {
+.page-home .home-artist-card {
   flex: 0 0 var(--artist-card-w);
+  width: var(--artist-card-w);
+  display: flex;
+  flex-direction: column;
   scroll-snap-align: start;
-  display: block;
-  line-height: 0;
+  background: var(--color-white);
   border-radius: 20px;
   overflow: hidden;
-  aspect-ratio: var(--artist-card-ratio);
+  text-decoration: none;
+  color: inherit;
+  box-shadow: var(--shadow-sm);
+  transition: transform var(--transition), box-shadow var(--transition);
 }
 
-.page-home .home-artist-figma img {
+.page-home .home-artist-card:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.page-home .home-artist-card__head {
+  padding: 18px 18px 0;
+}
+
+.page-home .home-artist-card__media {
+  position: relative;
+  margin: 14px 18px 0;
+  border-radius: 30px;
+  overflow: hidden;
+  aspect-ratio: 321 / 304;
+  background: #efefef;
+}
+
+.page-home .home-artist-card__media--empty {
+  background: var(--color-white);
+  border: 1px solid rgba(232, 232, 232, 0.9);
+}
+
+.page-home .home-artist-card__media img {
+  position: absolute;
+  inset: 0;
   width: 100%;
   height: 100%;
   object-fit: cover;
-  object-position: top center;
+  object-position: center;
   display: block;
+}
+
+.page-home .home-artist-card__body {
+  padding: 14px 18px 22px;
+  flex: 1 1 auto;
+}
+
+.page-home .home-artist-card__name {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 1.15;
+  color: var(--color-teal);
+}
+
+.page-home .home-artist-card__role {
+  margin: 8px 0 0;
+  font-family: var(--font-body);
+  font-size: 15px;
+  font-weight: 500;
+  line-height: 1.4;
+  color: var(--color-muted);
 }
 
 /* ── Vendor banner ── */
@@ -465,13 +529,29 @@
   display: block;
   border-radius: 30px;
   overflow: hidden;
+  text-decoration: none;
+  color: inherit;
+  transition: transform var(--transition), box-shadow var(--transition);
+}
+
+.page-home .vendor-banner:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+}
+
+.page-home .vendor-banner__media {
+  display: block;
   line-height: 0;
 }
 
-.page-home .vendor-banner img {
+.page-home .vendor-banner__media img {
   width: 100%;
   height: auto;
   display: block;
+}
+
+.page-home .vendor-banner__card {
+  display: none;
 }
 
 /* ── Responsive ── */
@@ -595,15 +675,23 @@
   }
 
   .page-home .home-artists {
-    --artist-card-w: min(320px, calc(100% - 56px));
+    --artist-card-w: min(300px, calc(100vw - 56px));
   }
 
-  /* Tickets: same card height — wide pass matches sabato/domenica */
+  /* Tickets: uniform card height on mobile */
   .page-home .ticket-figma {
+    position: relative;
+    width: 100%;
     aspect-ratio: var(--ticket-card-ratio);
+    line-height: normal;
   }
 
-  .page-home .ticket-figma img {
+  .page-home .ticket-figma__media {
+    position: absolute;
+    inset: 0;
+  }
+
+  .page-home .ticket-figma__media img {
     width: 100%;
     height: 100%;
     object-fit: cover;
@@ -614,25 +702,140 @@
     grid-column: auto;
   }
 
-  .page-home .ticket-figma--wide img {
-    object-position: left center;
+  .page-home .ticket-figma--wide .ticket-figma__media {
+    display: none;
   }
 
-  /* Vendor banner: taller crop focused on copy */
+  .page-home .ticket-figma__mobile-pass {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: stretch;
+    padding: clamp(18px, 5vw, 28px);
+    box-sizing: border-box;
+    background: var(--color-white);
+    border: 1px solid rgba(214, 158, 46, 0.25);
+    border-radius: inherit;
+  }
+
+  .page-home .ticket-figma__price {
+    font-family: var(--font-display);
+    font-size: clamp(44px, 12vw, 64px);
+    font-weight: 700;
+    line-height: 1;
+    color: var(--color-text);
+  }
+
+  .page-home .ticket-figma__days {
+    margin-top: 10px;
+    font-family: var(--font-body);
+    font-size: clamp(14px, 3.6vw, 18px);
+    font-weight: 600;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--color-text);
+  }
+
+  .page-home .ticket-figma__name {
+    margin: auto 0;
+    padding: 12px 0;
+    font-family: var(--font-display);
+    font-size: clamp(24px, 6.5vw, 34px);
+    font-weight: 700;
+    line-height: 1.1;
+    text-align: left;
+    color: var(--color-text);
+  }
+
+  .page-home .ticket-figma__btn {
+    align-self: flex-start;
+    margin-top: auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 52px;
+    padding: 0 22px;
+    border-radius: var(--radius-pill);
+    background: var(--color-text);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-weight: 600;
+    line-height: 1;
+  }
+
+  .page-home .food-figure,
+  .page-home .ticket-figma--wide {
+    border-radius: 20px;
+  }
   .page-home .home-section--last .container-content {
-    padding-inline: 10px;
+    padding-inline: var(--container-pad);
   }
 
   .page-home .vendor-banner {
-    min-height: clamp(260px, 72vw, 360px);
-    border-radius: 20px;
+    border-radius: 24px;
+    overflow: visible;
+    box-shadow: none;
   }
 
-  .page-home .vendor-banner img {
-    width: 100%;
-    height: clamp(260px, 72vw, 360px);
-    object-fit: cover;
-    object-position: 18% center;
+  .page-home .vendor-banner:hover {
+    transform: none;
+    box-shadow: none;
+  }
+
+  .page-home .vendor-banner__media {
+    display: none;
+  }
+
+  .page-home .vendor-banner__card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 14px;
+    padding: 28px 24px;
+    background: rgba(214, 158, 46, 0.12);
+    border: 1px solid rgba(214, 158, 46, 0.32);
+    border-radius: 24px;
+    box-shadow: var(--shadow-sm);
+  }
+
+  .page-home .vendor-banner__title {
+    margin: 0;
+    font-family: var(--font-display);
+    font-size: clamp(28px, 7.5vw, 36px);
+    font-weight: 700;
+    line-height: 1.08;
+    letter-spacing: -0.01em;
+    color: var(--color-text);
+  }
+
+  .page-home .vendor-banner__title-accent {
+    color: var(--color-yellow);
+  }
+
+  .page-home .vendor-banner__text {
+    margin: 0;
+    font-family: var(--font-body);
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.5;
+    color: var(--color-text);
+  }
+
+  .page-home .vendor-banner__cta {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 6px;
+    min-height: 52px;
+    padding: 0 22px;
+    border-radius: var(--radius-pill);
+    background: var(--color-text);
+    color: var(--color-white);
+    font-family: var(--font-body);
+    font-size: 17px;
+    font-weight: 600;
   }
 
   .page-home .food-figure,
@@ -640,12 +843,7 @@
     border-radius: 20px;
   }
 
-  .page-home .ticket-figma--wide img {
-    border-radius: 20px;
-  }
-}
-
-@media (max-width: 1100px) {
+  /* Vendor banner: mobile text card (image unreadable at small sizes) */
   .page-home .bento {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -772,29 +970,44 @@
   }
 
   .page-home .food-figure,
-  .page-home .vendor-banner {
+  .page-home .vendor-banner__card {
     border-radius: 16px;
+  }
+
+  .page-home .vendor-banner__card {
+    padding: 24px 20px;
+    gap: 12px;
+  }
+
+  .page-home .vendor-banner__title {
+    font-size: clamp(26px, 8vw, 32px);
+  }
+
+  .page-home .vendor-banner__text {
+    font-size: 15px;
+  }
+
+  .page-home .vendor-banner__cta {
+    width: 100%;
+    min-height: 50px;
+    font-size: 16px;
   }
 
   .page-home .ticket-figma {
     border-radius: 16px;
   }
 
-  .page-home .home-artist-figma {
+  .page-home .home-artist-card {
     border-radius: 16px;
   }
 
+  .page-home .home-artist-card__media {
+    border-radius: 24px;
+    margin-inline: 14px;
+  }
+
   .page-home .home-artists {
-    --artist-card-w: min(300px, 82vw);
-  }
-
-  .page-home .vendor-banner {
-    min-height: clamp(280px, 78vw, 380px);
-  }
-
-  .page-home .vendor-banner img {
-    height: clamp(280px, 78vw, 380px);
-    object-position: 12% center;
+    --artist-card-w: min(280px, 82vw);
   }
 
   .page-home .marquee {

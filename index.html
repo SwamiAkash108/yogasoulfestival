@@ -114,13 +114,25 @@
 
         <div class="tickets-preview">
           <a href="biglietti.html" class="ticket-figma">
-            <img src="assets/figma/ticket-sabato.png" alt="18 € — Sabato 26 Settembre">
+            <span class="ticket-figma__media">
+              <img src="assets/figma/ticket-sabato.png" alt="18 € — Sabato 26 Settembre" width="1095" height="708" loading="lazy" decoding="async">
+            </span>
           </a>
           <a href="biglietti.html" class="ticket-figma">
-            <img src="assets/figma/ticket-domenica.png" alt="18 € — Domenica 27 Settembre">
+            <span class="ticket-figma__media">
+              <img src="assets/figma/ticket-domenica.png" alt="18 € — Domenica 27 Settembre" width="1095" height="708" loading="lazy" decoding="async">
+            </span>
           </a>
           <a href="biglietti.html" class="ticket-figma ticket-figma--wide">
-            <img src="assets/figma/ticket-pattern.png" alt="36 € — Pass intero">
+            <span class="ticket-figma__media">
+              <img src="assets/figma/ticket-pattern.png" alt="36 € — Pass intero" width="1086" height="354" loading="lazy" decoding="async">
+            </span>
+            <span class="ticket-figma__mobile-pass">
+              <span class="ticket-figma__price">36 €</span>
+              <span class="ticket-figma__days">2 Giornate</span>
+              <span class="ticket-figma__name">Pass intero</span>
+              <span class="ticket-figma__btn">Acquista →</span>
+            </span>
           </a>
         </div>
       </div>
@@ -134,14 +146,99 @@
         </header>
 
         <div class="home-artists" tabindex="0" role="region" aria-label="Artisti in evidenza">
-          <a href="artista.html" class="home-artist-figma">
-            <img src="assets/figma/artist-card-mj.png" alt="Michael Jackson — Musica">
+          <a href="artista.html" class="home-artist-card">
+            <div class="home-artist-card__head">
+              <span class="chip tag-yellow">Musica</span>
+            </div>
+            <div class="home-artist-card__media">
+              <img src="assets/figma/artist-michael-jackson.png" alt="" width="370" height="412" loading="lazy" decoding="async">
+            </div>
+            <div class="home-artist-card__body">
+              <h3 class="home-artist-card__name">Michael Jackson</h3>
+              <p class="home-artist-card__role">Voce e Musico-terapeuta</p>
+            </div>
           </a>
-          <a href="artista.html" class="home-artist-figma">
-            <img src="assets/figma/artist-card-sia.png" alt="Sia — Talk">
+          <a href="artista.html" class="home-artist-card">
+            <div class="home-artist-card__head">
+              <span class="chip tag-pink">Talk</span>
+            </div>
+            <div class="home-artist-card__media">
+              <img src="assets/figma/artist-sia.png" alt="" width="370" height="412" loading="lazy" decoding="async">
+            </div>
+            <div class="home-artist-card__body">
+              <h3 class="home-artist-card__name">Sia</h3>
+              <p class="home-artist-card__role">Foto reporter</p>
+            </div>
           </a>
-          <a href="artista.html" class="home-artist-figma">
-            <img src="assets/figma/artist-card-pino.png" alt="Pino Daniele — Yoga">
+          <a href="artista.html" class="home-artist-card">
+            <div class="home-artist-card__head">
+              <span class="chip tag-teal">Yoga</span>
+            </div>
+            <div class="home-artist-card__media home-artist-card__media--empty" aria-hidden="true"></div>
+            <div class="home-artist-card__body">
+              <h3 class="home-artist-card__name">Pino Daniele</h3>
+              <p class="home-artist-card__role">Vinyasa Yoga</p>
+            </div>
+          </a>
+          <a href="artista.html" class="home-artist-card">
+            <div class="home-artist-card__head">
+              <span class="chip tag-teal">Meditazione</span>
+            </div>
+            <div class="home-artist-card__media">
+              <img src="https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=600&amp;q=80" alt="" width="600" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="home-artist-card__body">
+              <h3 class="home-artist-card__name">Luna Moretti</h3>
+              <p class="home-artist-card__role">Meditazione guidata</p>
+            </div>
+          </a>
+          <a href="artista.html" class="home-artist-card">
+            <div class="home-artist-card__head">
+              <span class="chip tag-yellow">Musica</span>
+            </div>
+            <div class="home-artist-card__media">
+              <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=600&amp;q=80" alt="" width="600" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="home-artist-card__body">
+              <h3 class="home-artist-card__name">Marco Ferri</h3>
+              <p class="home-artist-card__role">Percussioni &amp; sound bath</p>
+            </div>
+          </a>
+          <a href="artista.html" class="home-artist-card">
+            <div class="home-artist-card__head">
+              <span class="chip tag-yellow">Workshop</span>
+            </div>
+            <div class="home-artist-card__media">
+              <img src="https://images.unsplash.com/photo-1578662996442-48f60103fc96?w=600&amp;q=80" alt="" width="600" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="home-artist-card__body">
+              <h3 class="home-artist-card__name">Elena Russo</h3>
+              <p class="home-artist-card__role">Ceramica consapevole</p>
+            </div>
+          </a>
+          <a href="artista.html" class="home-artist-card">
+            <div class="home-artist-card__head">
+              <span class="chip tag-pink">Talk</span>
+            </div>
+            <div class="home-artist-card__media">
+              <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=600&amp;q=80" alt="" width="600" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="home-artist-card__body">
+              <h3 class="home-artist-card__name">Giulia Conti</h3>
+              <p class="home-artist-card__role">Nutrizione vegetale</p>
+            </div>
+          </a>
+          <a href="artista.html" class="home-artist-card">
+            <div class="home-artist-card__head">
+              <span class="chip tag-teal">Yoga</span>
+            </div>
+            <div class="home-artist-card__media">
+              <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=600&amp;q=80" alt="" width="600" height="600" loading="lazy" decoding="async">
+            </div>
+            <div class="home-artist-card__body">
+              <h3 class="home-artist-card__name">Noah Singh</h3>
+              <p class="home-artist-card__role">Hatha Yoga al tramonto</p>
+            </div>
           </a>
         </div>
       </div>
@@ -150,7 +247,19 @@
     <section class="home-section home-section--last">
       <div class="container container-content">
         <a href="vendors.html" class="vendor-banner">
-          <img src="assets/figma/sponsor-banner.png" alt="Porta il tuo brand dentro il festival.">
+          <picture class="vendor-banner__media">
+            <img src="assets/figma/sponsor-banner.png" alt="" width="1088" height="474" decoding="async">
+          </picture>
+          <div class="vendor-banner__card">
+            <h2 class="vendor-banner__title">
+              Porta il tuo brand<br>
+              <span class="vendor-banner__title-accent">dentro il festival.</span>
+            </h2>
+            <p class="vendor-banner__text">
+              Cerchi visibilità o vuoi presentarti con un banchetto? Pre-iscriviti adesso.
+            </p>
+            <span class="vendor-banner__cta">Richiedi uno spazio →</span>
+          </div>
         </a>
       </div>
     </section>
