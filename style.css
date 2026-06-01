@@ -803,6 +803,22 @@ p {
 .artist-card {
   display: flex;
   flex-direction: column;
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: transform var(--transition), box-shadow var(--transition);
+  -webkit-tap-highlight-color: transparent;
+}
+
+.artist-card:hover,
+.artist-card:focus-visible {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
+  outline: none;
+}
+
+.artist-card:focus-visible {
+  box-shadow: var(--shadow-md), 0 0 0 3px rgba(16, 118, 123, 0.35);
 }
 
 .artist-preview-media,
@@ -854,7 +870,8 @@ p {
   color: var(--color-text);
 }
 
-.artist-card-link:hover {
+.artist-card:hover .artist-card-link,
+.artist-card:focus-visible .artist-card-link {
   color: var(--color-teal);
 }
 
