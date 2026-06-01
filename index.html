@@ -81,16 +81,14 @@
             <img src="assets/figma/bento-meditazione.png" alt="">
             <div class="bento-overlay"><h3>Meditazione</h3></div>
           </article>
-          <div class="bento-col">
-            <article class="bento-item bento-item--sm">
-              <img src="assets/figma/bento-workshop.png" alt="">
-              <div class="bento-overlay"><h3>Workshop</h3></div>
-            </article>
-            <article class="bento-item bento-item--sm">
-              <img src="assets/figma/bento-talks.png" alt="">
-              <div class="bento-overlay"><h3>Talks</h3></div>
-            </article>
-          </div>
+          <article class="bento-item bento-item--sm bento-item--workshop">
+            <img src="assets/figma/bento-workshop.png" alt="">
+            <div class="bento-overlay"><h3>Workshop</h3></div>
+          </article>
+          <article class="bento-item bento-item--sm bento-item--talks">
+            <img src="assets/figma/bento-talks.png" alt="">
+            <div class="bento-overlay"><h3>Talks</h3></div>
+          </article>
           <article class="bento-item bento-item--md bento-item--musica">
             <img src="assets/figma/bento-musica.png" alt="">
             <div class="bento-overlay"><h3>Musica</h3></div>
@@ -128,14 +126,14 @@
       </div>
     </section>
 
-    <section class="home-section">
+    <section class="home-section home-section--artists">
       <div class="container container-content">
         <header class="home-section-header home-section-header--row">
           <h2 class="home-h2 home-h2--multiline">Le voci. <span class="c-teal">I corpi.</span><br>La musica.</h2>
           <a href="artisti.html" class="btn btn-outline-dark">Tutti gli artisti →</a>
         </header>
 
-        <div class="home-artists">
+        <div class="home-artists" tabindex="0" role="region" aria-label="Artisti in evidenza">
           <a href="artista.html" class="home-artist-figma">
             <img src="assets/figma/artist-card-mj.png" alt="Michael Jackson — Musica">
           </a>

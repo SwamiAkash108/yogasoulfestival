@@ -266,9 +266,19 @@ p {
   top: 0;
   z-index: 1005;
   background: rgba(255, 255, 255, 0.88);
+  border-bottom: 1px solid rgba(232, 232, 232, 0.6);
+  isolation: isolate;
+}
+
+.navbar::before,
+.topbar::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: -1;
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border-bottom: 1px solid rgba(232, 232, 232, 0.6);
+  pointer-events: none;
 }
 
 .navbar .container,
@@ -357,29 +367,33 @@ p {
   display: none;
   width: 48px;
   height: 48px;
-  border: 1px solid var(--color-border);
+  min-width: 48px;
+  flex-shrink: 0;
+  border: 1.5px solid rgba(16, 118, 123, 0.35);
   border-radius: 14px;
-  background: rgba(255, 255, 255, 0.9);
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(51, 51, 51, 0.08);
   position: relative;
   cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
 }
 
 .nav-toggle span {
   position: absolute;
-  left: 12px;
-  right: 12px;
-  height: 2px;
-  background: var(--color-text);
+  left: 11px;
+  right: 11px;
+  height: 2.5px;
+  background: var(--color-teal);
   border-radius: 1px;
   transition: var(--transition);
 }
 
-.nav-toggle span:nth-child(1) { top: 16px; }
-.nav-toggle span:nth-child(2) { top: 23px; }
-.nav-toggle span:nth-child(3) { top: 30px; }
+.nav-toggle span:nth-child(1) { top: 15px; }
+.nav-toggle span:nth-child(2) { top: 22px; }
+.nav-toggle span:nth-child(3) { top: 29px; }
 
 .nav-toggle.open span:nth-child(1) {
-  top: 23px;
+  top: 22px;
   transform: rotate(45deg);
 }
 
@@ -388,7 +402,7 @@ p {
 }
 
 .nav-toggle.open span:nth-child(3) {
-  top: 23px;
+  top: 22px;
   transform: rotate(-45deg);
 }
 
@@ -1703,14 +1717,23 @@ h3.program-day-header {
     --mobile-nav-height: 72px;
   }
 
+  .navbar,
+  .topbar {
+    padding-top: env(safe-area-inset-top, 0);
+  }
+
   .navbar-inner {
-    grid-template-columns: 1fr auto auto;
+    display: flex;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: flex-start;
     gap: 10px;
     min-height: var(--mobile-nav-height);
-    align-items: center;
+    padding-block: 10px;
   }
 
   .navbar-logo {
+    flex: 1 1 auto;
     min-width: 0;
   }
 
@@ -1718,32 +1741,49 @@ h3.program-day-header {
     display: flex;
     align-items: center;
     justify-content: center;
-    flex-shrink: 0;
-    z-index: 1004;
+    order: 2;
+    flex: 0 0 44px;
+    width: 44px;
+    height: 44px;
+    min-width: 44px;
+    z-index: 1006;
+  }
+
+  .nav-toggle span:nth-child(1) { top: 13px; }
+  .nav-toggle span:nth-child(2) { top: 20px; }
+  .nav-toggle span:nth-child(3) { top: 27px; }
+
+  .nav-toggle.open span:nth-child(1),
+  .nav-toggle.open span:nth-child(3) {
+    top: 20px;
   }
 
   .navbar-links {
     display: none;
     position: fixed;
-    top: var(--mobile-nav-height);
+    top: calc(var(--mobile-nav-height) + env(safe-area-inset-top, 0px));
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 1003;
+    z-index: 1004;
     flex-direction: column;
     align-items: stretch;
     justify-content: flex-start;
     gap: 4px;
     margin: 0;
-    padding: 12px var(--container-pad) max(24px, env(safe-area-inset-bottom));
+    padding: 16px var(--container-pad) max(24px, env(safe-area-inset-bottom));
     min-height: 0;
-    width: auto;
+    width: 100%;
+    max-width: none;
     border: none;
     border-radius: 0;
     background: var(--color-bg);
     box-shadow: none;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+    order: 10;
   }
 
   .navbar-links.is-open {
@@ -1751,15 +1791,25 @@ h3.program-day-header {
   }
 
   .navbar-link {
+    display: block;
+    flex: 0 0 auto;
     width: 100%;
     text-align: left;
     padding: 14px 16px;
     font-size: 17px;
     border-radius: 12px;
+    color: var(--color-text);
+  }
+
+  .navbar-link.is-active {
+    background: var(--color-text);
+    color: var(--color-white);
+    font-weight: 600;
   }
 
   .navbar-cta {
-    grid-column: auto;
+    order: 3;
+    flex: 0 0 auto;
     justify-self: end;
     width: auto;
     min-height: 44px;
@@ -1775,12 +1825,13 @@ h3.program-day-header {
   body.nav-open::before {
     content: "";
     position: fixed;
-    top: var(--mobile-nav-height);
+    top: calc(var(--mobile-nav-height) + env(safe-area-inset-top, 0px));
     left: 0;
     right: 0;
     bottom: 0;
-    z-index: 1002;
+    z-index: 1003;
     background: rgba(51, 51, 51, 0.35);
+    pointer-events: none;
   }
 
   .footer-grid {
@@ -1893,10 +1944,16 @@ h3.program-day-header {
   }
 
   .navbar-cta,
-  .nav-toggle,
   .ticket-card-btn,
   .vendors-submit {
     width: auto;
+  }
+
+  .nav-toggle {
+    width: 44px;
+    min-width: 44px;
+    height: 44px;
+    flex: 0 0 44px;
   }
 
   .navbar-link {

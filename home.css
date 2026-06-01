@@ -287,11 +287,11 @@
   background: rgba(51, 51, 51, 0.05);
 }
 
-/* ── Bento (624 + 16 + 390 | Musica + Yoga bottom row) ── */
+/* ── Bento (Figma: 624 | 16 | 390, rows 255 + gap + 255 + gap + 255) ── */
 .page-home .bento {
   display: grid;
   grid-template-columns: minmax(0, 624fr) 16px minmax(0, 390fr);
-  grid-template-rows: 526px 16px 255px;
+  grid-template-rows: 255px 16px 255px 16px 255px;
 }
 
 .page-home .bento-item {
@@ -333,19 +333,21 @@
 
 .page-home .bento-item--lg {
   grid-column: 1;
-  grid-row: 1;
+  grid-row: 1 / 4;
 }
 
 .page-home .bento-item--lg .bento-overlay h3 {
   font-size: 64px;
 }
 
-.page-home .bento-col {
+.page-home .bento-item--workshop {
   grid-column: 3;
   grid-row: 1;
-  display: grid;
-  grid-template-rows: 255px 16px 255px;
-  min-height: 0;
+}
+
+.page-home .bento-item--talks {
+  grid-column: 3;
+  grid-row: 3;
 }
 
 .page-home .bento-item--sm .bento-overlay h3 {
@@ -354,12 +356,12 @@
 
 .page-home .bento-item--musica {
   grid-column: 1;
-  grid-row: 3;
+  grid-row: 5;
 }
 
 .page-home .bento-item--yoga {
   grid-column: 3;
-  grid-row: 3;
+  grid-row: 5;
 }
 
 .page-home .bento-item--md .bento-overlay h3 {
@@ -408,23 +410,53 @@
   border-radius: 30px;
 }
 
-/* ── Artists (Figma card exports) ── */
+/* Shared Figma export ratios for consistent mobile scaling */
+.page-home {
+  --ticket-card-ratio: 1095 / 708;
+  --artist-card-ratio: 948 / 1298;
+  --vendor-banner-ratio: 1088 / 474;
+}
+
+/* ── Artists carousel (Figma card exports) ── */
+.page-home .home-section--artists .container-content {
+  overflow: visible;
+}
+
 .page-home .home-artists {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  --artist-card-w: clamp(280px, 36vw, 340px);
+  display: flex;
+  flex-wrap: nowrap;
   gap: 16px;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+  scroll-snap-type: x mandatory;
+  scroll-padding-inline: var(--container-pad);
+  -webkit-overflow-scrolling: touch;
+  scrollbar-width: none;
+  margin-inline: calc(-1 * var(--container-pad));
+  padding-inline: var(--container-pad);
+  padding-bottom: 4px;
+}
+
+.page-home .home-artists::-webkit-scrollbar {
+  display: none;
 }
 
 .page-home .home-artist-figma {
+  flex: 0 0 var(--artist-card-w);
+  scroll-snap-align: start;
   display: block;
   line-height: 0;
   border-radius: 20px;
   overflow: hidden;
+  aspect-ratio: var(--artist-card-ratio);
 }
 
 .page-home .home-artist-figma img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: top center;
   display: block;
 }
 
@@ -453,6 +485,19 @@
     min-height: 44px;
     padding: 0 14px;
     font-size: 14px;
+  }
+
+  .page-home .navbar-links:not(.is-open) {
+    display: none;
+  }
+
+  .page-home .navbar-links {
+    min-height: 0;
+    padding: 16px var(--container-pad) max(24px, env(safe-area-inset-bottom));
+    gap: 4px;
+    background: var(--color-bg);
+    border: none;
+    border-radius: 0;
   }
 
   .page-home .home-hero {
@@ -544,14 +589,53 @@
     padding: 12px 0;
   }
 
-  .page-home .tickets-preview,
-  .page-home .home-artists {
+  .page-home .tickets-preview {
     grid-template-columns: 1fr;
     gap: 16px;
   }
 
+  .page-home .home-artists {
+    --artist-card-w: min(320px, calc(100% - 56px));
+  }
+
+  /* Tickets: same card height — wide pass matches sabato/domenica */
+  .page-home .ticket-figma {
+    aspect-ratio: var(--ticket-card-ratio);
+  }
+
+  .page-home .ticket-figma img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+  }
+
+  .page-home .ticket-figma--wide {
+    grid-column: auto;
+  }
+
+  .page-home .ticket-figma--wide img {
+    object-position: left center;
+  }
+
+  /* Vendor banner: taller crop focused on copy */
+  .page-home .home-section--last .container-content {
+    padding-inline: 10px;
+  }
+
+  .page-home .vendor-banner {
+    min-height: clamp(260px, 72vw, 360px);
+    border-radius: 20px;
+  }
+
+  .page-home .vendor-banner img {
+    width: 100%;
+    height: clamp(260px, 72vw, 360px);
+    object-fit: cover;
+    object-position: 18% center;
+  }
+
   .page-home .food-figure,
-  .page-home .vendor-banner,
   .page-home .ticket-figma--wide {
     border-radius: 20px;
   }
@@ -569,17 +653,12 @@
   }
 
   .page-home .bento-item--lg,
-  .page-home .bento-col,
+  .page-home .bento-item--workshop,
+  .page-home .bento-item--talks,
   .page-home .bento-item--musica,
   .page-home .bento-item--yoga {
     grid-column: auto;
     grid-row: auto;
-  }
-
-  .page-home .bento-col {
-    display: flex;
-    flex-direction: column;
-    gap: 12px;
   }
 
   .page-home .bento-item {
@@ -674,10 +753,6 @@
     gap: 12px;
   }
 
-  .page-home .bento-col {
-    display: contents;
-  }
-
   .page-home .bento-item {
     min-height: 200px;
     border-radius: 16px;
@@ -701,9 +776,25 @@
     border-radius: 16px;
   }
 
-  .page-home .home-artist-figma,
   .page-home .ticket-figma {
     border-radius: 16px;
+  }
+
+  .page-home .home-artist-figma {
+    border-radius: 16px;
+  }
+
+  .page-home .home-artists {
+    --artist-card-w: min(300px, 82vw);
+  }
+
+  .page-home .vendor-banner {
+    min-height: clamp(280px, 78vw, 380px);
+  }
+
+  .page-home .vendor-banner img {
+    height: clamp(280px, 78vw, 380px);
+    object-position: 12% center;
   }
 
   .page-home .marquee {
