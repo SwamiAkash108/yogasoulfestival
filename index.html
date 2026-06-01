@@ -5,12 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Yoga Soul Festival — Home</title>
   <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="home.css">
 </head>
-<body>
+<body class="page-home">
   <header class="navbar topbar">
     <div class="container navbar-inner">
       <a href="index.html" class="navbar-logo">
-        <img src="assets/logo-ysf.png" alt="" width="49" height="49">
+        <img src="assets/figma/logo.png" alt="" width="49" height="49">
         <span class="navbar-logo-text">
           <span class="navbar-logo-yoga">YOGA SOUL</span>
           <span class="navbar-logo-festival">FESTIVAL</span>
@@ -33,17 +34,17 @@
 
   <main>
     <section class="home-hero">
-      <div class="container container-content">
+      <div class="container container-hero">
         <div class="home-hero-box">
-          <p class="hero-meta">
+          <div class="hero-meta">
             <span>26-27 SETTEMBRE 2026</span>
-            <span class="hero-meta-sep">|</span>
+            <span class="hero-meta-line" aria-hidden="true"></span>
             <span>ORBASSANO, TO</span>
-          </p>
-          <h1 class="hero-title">
-            <span class="hero-title-yoga">YOGA SOUL</span>
-            <span class="hero-title-festival">FESTIVAL</span>
-          </h1>
+          </div>
+          <div class="hero-brand">
+            <img class="hero-yoga-soul" src="assets/figma/hero-yoga-soul.svg" alt="YOGA SOUL" width="948" height="120">
+            <p class="hero-title-festival">FESTIVAL</p>
+          </div>
           <p class="hero-subtitle">Due giorni per riconnetterti con la tua essenza. Yoga, suono, cucina veg e voci che cambieranno il modo in cui ti ascolti.</p>
           <div class="hero-actions">
             <a href="biglietti.html" class="btn btn-white">Acquista biglietti →</a>
@@ -60,129 +61,110 @@
       </div>
     </div>
 
-    <section class="section">
+    <section class="home-section">
       <div class="container container-content">
-        <div class="section-head">
-          <div>
-            <h2>Vivi la <span class="highlight-pink">tua</span> esperienza.</h2>
-            <p class="section-sub">Cinque mondi che si intrecciano in due giorni: pratica, suono, parola, gusto.</p>
+        <header class="home-section-header">
+          <h2 class="home-h2">Vivi la <span class="c-pink">tua</span> esperienza.</h2>
+          <p class="home-lead">Cinque mondi che si intrecciano in due giorni: pratica, suono, parola, gusto.</p>
+        </header>
+
+        <div class="bento">
+          <article class="bento-item bento-item--lg">
+            <img src="assets/figma/bento-meditazione.png" alt="Meditazione">
+            <div class="bento-overlay"><h3>Meditazione</h3></div>
+          </article>
+          <div class="bento-col">
+            <article class="bento-item bento-item--sm">
+              <img src="assets/figma/bento-workshop.png" alt="Workshop">
+              <div class="bento-overlay"><h3>Workshop</h3></div>
+            </article>
+            <article class="bento-item bento-item--sm">
+              <img src="assets/figma/bento-talks.png" alt="Talks">
+              <div class="bento-overlay"><h3>Talks</h3></div>
+            </article>
           </div>
-        </div>
-        <div class="experience-bento">
-          <article class="bento-card bento-card--1" style="background-image: linear-gradient(180deg, rgba(51,51,51,0.05) 30%, rgba(51,51,51,0.75) 100%), url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80');">
-            <h3>Meditazione</h3>
+          <article class="bento-item bento-item--md bento-item--musica">
+            <img src="assets/figma/bento-musica.png" alt="Musica">
+            <div class="bento-overlay"><h3>Musica</h3></div>
           </article>
-          <article class="bento-card bento-card--2" style="background-image: linear-gradient(180deg, rgba(51,51,51,0.05) 30%, rgba(51,51,51,0.75) 100%), url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80');">
-            <h3>Workshop</h3>
-          </article>
-          <article class="bento-card bento-card--3" style="background-image: linear-gradient(180deg, rgba(51,51,51,0.05) 30%, rgba(51,51,51,0.75) 100%), url('https://images.unsplash.com/photo-1475721027865-a073e5b6e960?w=800&q=80');">
-            <h3>Talks</h3>
-          </article>
-          <article class="bento-card bento-card--4" style="background-image: linear-gradient(180deg, rgba(51,51,51,0.05) 30%, rgba(51,51,51,0.75) 100%), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80');">
-            <h3>Musica</h3>
-          </article>
-          <article class="bento-card bento-card--5" style="background-image: linear-gradient(180deg, rgba(51,51,51,0.05) 30%, rgba(51,51,51,0.75) 100%), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80');">
-            <h3>Yoga</h3>
+          <article class="bento-item bento-item--md bento-item--yoga">
+            <img src="assets/figma/bento-yoga.png" alt="Yoga">
+            <div class="bento-overlay"><h3>Yoga</h3></div>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-tight">
+    <section class="home-section home-section--tight">
       <div class="container container-content">
-        <div class="food-banner">
-          <div class="food-banner-content">
-            <h3>Solo vegetale. Solo buono.</h3>
-            <p>Proposte fresche ispirate a cucine di tutto il mondo, ingredienti semplici e di stagione. Il cibo è parte dell'esperienza.</p>
-          </div>
-          <div class="food-banner-image" style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=80');"></div>
+        <figure class="food-figure">
+          <img src="assets/figma/food-banner-full.png" alt="Solo vegetale. Solo buono.">
+        </figure>
+      </div>
+    </section>
+
+    <section class="home-section">
+      <div class="container container-content">
+        <header class="home-section-header home-section-header--row">
+          <h2 class="home-h2 home-h2--multiline">Tre formule.<br><span class="c-orange">Una sola anima.</span></h2>
+          <a href="biglietti.html" class="btn btn-outline-dark">Consulta i biglietti →</a>
+        </header>
+
+        <div class="tickets-preview">
+          <article class="ticket-preview-card">
+            <p class="ticket-preview-price">18 €</p>
+            <p class="ticket-preview-label">1 GIORNATA</p>
+            <h3 class="ticket-preview-day c-teal">Sabato 26 Settembre</h3>
+            <a href="biglietti.html" class="btn btn-dark btn-sm">Acquista →</a>
+          </article>
+          <article class="ticket-preview-card">
+            <p class="ticket-preview-price">18 €</p>
+            <p class="ticket-preview-label">1 GIORNATA</p>
+            <h3 class="ticket-preview-day c-red">Domenica 27 Settembre</h3>
+            <a href="biglietti.html" class="btn btn-dark btn-sm">Acquista →</a>
+          </article>
+          <a href="biglietti.html" class="ticket-preview-card ticket-preview-card--wide ticket-preview-card--figma">
+            <img src="assets/figma/ticket-pattern.png" alt="Pass intero 36 € — 2 giornate">
+          </a>
         </div>
       </div>
     </section>
 
-    <section class="section">
+    <section class="home-section home-section--tight">
       <div class="container container-content">
-        <div class="section-head">
-          <div>
-            <h2>Tre formule. <span class="highlight-orange">Una sola anima.</span></h2>
-          </div>
-          <a href="biglietti.html" class="section-head-link">Consulta i biglietti →</a>
-        </div>
-        <div class="pricing-home">
-          <article class="pricing-card pricing-card--a">
-            <p class="price">18 <span>€</span></p>
-            <p class="pricing-label">1 GIORNATA</p>
-            <h3>Sabato 26 Settembre</h3>
-            <a href="biglietti.html" class="btn btn-dark">Acquista →</a>
-          </article>
-          <article class="pricing-card pricing-card--b">
-            <p class="price">18 <span>€</span></p>
-            <p class="pricing-label">1 GIORNATA</p>
-            <h3>Domenica 27 Settembre</h3>
-            <a href="biglietti.html" class="btn btn-dark">Acquista →</a>
-          </article>
-          <article class="pricing-card pricing-card--featured">
-            <div class="pricing-featured-inner">
-              <div>
-                <p class="price">36 <span>€</span></p>
-                <p class="pricing-label">2 GIORNATE</p>
-                <h3>Pass intero</h3>
-                <a href="biglietti.html" class="btn btn-dark">Acquista →</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
+        <header class="home-section-header home-section-header--row">
+          <h2 class="home-h2 home-h2--multiline">Le voci. <span class="c-teal">I corpi.</span><br>La musica.</h2>
+          <a href="artisti.html" class="btn btn-outline-dark">Tutti gli artisti →</a>
+        </header>
 
-    <section class="section section-tight">
-      <div class="container container-content">
-        <div class="section-head">
-          <div>
-            <h2>Le voci. <span class="highlight-teal">I corpi.</span> La musica.</h2>
-          </div>
-          <a href="artisti.html" class="section-head-link">Tutti gli artisti →</a>
-        </div>
-        <div class="artist-preview-grid">
-          <article class="artist-preview-card">
-            <div class="artist-preview-tags"><span class="chip tag-yellow">MUSICA</span></div>
-            <div class="artist-preview-media" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80');"></div>
-            <div class="artist-preview-body">
-              <h3 class="artist-preview-title">Michael Jackson</h3>
-              <p>Voce e Musico-terapeuta</p>
-            </div>
+        <div class="home-artists">
+          <article class="home-artist-card">
+            <span class="home-artist-tag c-yellow">MUSICA</span>
+            <img src="assets/figma/artist-michael-jackson.png" alt="Michael Jackson">
+            <h3>Michael Jackson</h3>
+            <p>Voce e Musico-terapeuta</p>
           </article>
-          <article class="artist-preview-card">
-            <div class="artist-preview-tags"><span class="chip tag-pink">TALK</span></div>
-            <div class="artist-preview-media" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80');"></div>
-            <div class="artist-preview-body">
-              <h3 class="artist-preview-title">Sia</h3>
-              <p>Foto reporter</p>
-            </div>
+          <article class="home-artist-card">
+            <span class="home-artist-tag c-pink">TALK</span>
+            <img src="assets/figma/artist-sia.png" alt="Sia">
+            <h3>Sia</h3>
+            <p>Foto reporter</p>
           </article>
-          <article class="artist-preview-card">
-            <div class="artist-preview-tags"><span class="chip tag-teal">YOGA</span></div>
-            <div class="artist-preview-media" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80');"></div>
-            <div class="artist-preview-body">
-              <h3 class="artist-preview-title">Pino Daniele</h3>
-              <p>Vinyasa Yoga</p>
-            </div>
+          <article class="home-artist-card">
+            <span class="home-artist-tag c-teal">YOGA</span>
+            <img src="assets/figma/artist-pino-daniele.png" alt="Pino Daniele">
+            <h3>Pino Daniele</h3>
+            <p>Vinyasa Yoga</p>
           </article>
         </div>
       </div>
     </section>
 
-    <section class="section section-tight">
+    <section class="home-section home-section--tight">
       <div class="container container-content">
-        <div class="sponsor-cta-banner">
-          <div class="sponsor-cta-photo" style="background-image: url('https://images.unsplash.com/photo-1531058020387-3d344d9969f5?w=1200&q=80');"></div>
-          <div class="sponsor-cta-overlay"></div>
-          <div class="sponsor-cta-content">
-            <h3>Porta il tuo brand <span class="highlight-orange">dentro il festival.</span></h3>
-            <p>Cerchi visibilità o vuoi presentarti con un banchetto? Pre-iscriviti adesso.</p>
-            <a href="vendors.html" class="btn btn-dark">Richiedi uno spazio →</a>
-          </div>
-        </div>
+        <a href="vendors.html" class="vendor-banner">
+          <img src="assets/figma/sponsor-banner.png" alt="Porta il tuo brand dentro il festival.">
+        </a>
       </div>
     </section>
   </main>
@@ -191,7 +173,7 @@
     <div class="container footer-grid">
       <div>
         <a href="index.html" class="footer-logo">
-          <img src="assets/logo-ysf.png" alt="" width="49" height="49">
+          <img src="assets/figma/logo.png" alt="" width="49" height="49">
           <span class="navbar-logo-text">
             <span class="navbar-logo-yoga">YOGA SOUL</span>
             <span class="navbar-logo-festival">FESTIVAL</span>

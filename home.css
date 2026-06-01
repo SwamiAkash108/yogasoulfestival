@@ -1,0 +1,515 @@
+/* Homepage — pixel-aligned to Figma frame "Home page" (435:179) */
+
+.page-home {
+  --content-w: 1030px;
+  --hero-w: 1200px;
+}
+
+.page-home .container-hero {
+  width: min(var(--hero-w), 100% - (var(--container-pad) * 2));
+  margin-inline: auto;
+}
+
+.page-home .container-content {
+  width: min(var(--content-w), 100% - (var(--container-pad) * 2));
+  margin-inline: auto;
+}
+
+/* Hero */
+.page-home .home-hero {
+  margin-top: 24px;
+  padding-bottom: 8px;
+}
+
+.page-home .home-hero-box {
+  position: relative;
+  border-radius: 50px;
+  min-height: 928px;
+  padding: clamp(40px, 5vw, 72px) clamp(24px, 4vw, 80px);
+  background: radial-gradient(
+    ellipse 102% 102% at 0% 5%,
+    #d69e2e 0%,
+    #d53f8c 100%
+  );
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.page-home .home-hero-box::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: url("assets/figma/hero-texture.png") center / cover no-repeat;
+  opacity: 0.2;
+  pointer-events: none;
+}
+
+.page-home .home-hero-box > * {
+  position: relative;
+  z-index: 1;
+}
+
+.page-home .hero-meta {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 16px;
+  font-family: var(--font-display);
+  font-size: clamp(18px, 2.5vw, 32px);
+  font-weight: 500;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  color: #fff;
+}
+
+.page-home .hero-meta-line {
+  width: 1px;
+  height: 45px;
+  background: rgba(255, 255, 255, 0.85);
+}
+
+.page-home .hero-brand {
+  margin-top: clamp(20px, 3vw, 36px);
+  max-width: 100%;
+}
+
+.page-home .hero-yoga-soul {
+  width: min(948px, 100%);
+  height: auto;
+  display: block;
+}
+
+.page-home .hero-title-festival {
+  margin: 8px 0 0;
+  font-family: var(--font-logo-sub);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 600;
+  letter-spacing: 0.28em;
+  text-transform: uppercase;
+  color: #fff;
+  line-height: 1.5;
+}
+
+.page-home .hero-subtitle {
+  margin-top: 18px;
+  max-width: 1040px;
+  font-family: var(--font-body);
+  font-size: clamp(18px, 2.2vw, 28px);
+  font-weight: 400;
+  line-height: 1.35;
+  color: rgba(255, 255, 255, 0.95);
+}
+
+.page-home .hero-actions {
+  margin-top: 32px;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 14px;
+}
+
+.page-home .btn-white {
+  min-height: 61px;
+  padding: 0 28px;
+  background: #fff;
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.page-home .btn-outline-white {
+  min-height: 61px;
+  padding: 0 28px;
+  border: 1px solid #fff;
+  background: transparent;
+  color: #fff;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.page-home .btn-outline-white:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+/* Marquee — static feel like Figma (no scroll on desktop) */
+.page-home .marquee {
+  background: #fff;
+  border-top: 1px solid var(--color-border);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.page-home .marquee-track {
+  justify-content: center;
+  width: 100%;
+  animation: none;
+  padding: 10px 0;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 48px);
+  font-weight: 700;
+  color: #10767b;
+  letter-spacing: 0;
+  gap: 0;
+}
+
+.page-home .marquee-track span:last-child {
+  display: none;
+}
+
+/* Section typography */
+.page-home .home-section {
+  padding: clamp(48px, 6vw, 80px) 0;
+}
+
+.page-home .home-section--tight {
+  padding-top: 0;
+}
+
+.page-home .home-section-header {
+  margin-bottom: 24px;
+}
+
+.page-home .home-section-header--row {
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
+.page-home .home-h2 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 64px);
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  line-height: 1.05;
+  color: #333;
+}
+
+.page-home .home-h2--multiline {
+  letter-spacing: 0.06em;
+}
+
+.page-home .home-h2--light {
+  color: #fff;
+}
+
+.page-home .home-lead {
+  margin-top: 14px;
+  font-size: clamp(16px, 2vw, 24px);
+  font-weight: 500;
+  color: #333;
+  max-width: 1030px;
+}
+
+.page-home .c-pink { color: #d75062; }
+.page-home .c-orange { color: #dd6b20; }
+.page-home .c-teal { color: #10767b; }
+.page-home .c-red { color: #e53e3e; }
+.page-home .c-yellow { color: #d69e2e; }
+
+.page-home .btn-outline-dark {
+  min-height: 61px;
+  padding: 0 24px;
+  border: 1px solid #333;
+  background: transparent;
+  color: #333;
+  font-size: 20px;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.page-home .btn-outline-dark:hover {
+  background: rgba(51, 51, 51, 0.05);
+}
+
+.page-home .btn-sm {
+  min-height: 61px;
+  padding: 0 22px;
+  font-size: 20px;
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+/* Bento grid — Figma: 624 + 16 + 390 top; 504 + 22 + 504 bottom */
+.page-home .bento {
+  display: grid;
+  grid-template-columns: 624fr 16px 390fr;
+  grid-template-rows: 526px 16px 255px;
+  gap: 0;
+}
+
+.page-home .bento-item {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.page-home .bento-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+.page-home .bento-overlay {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  align-items: flex-end;
+  padding: 24px;
+  background: linear-gradient(180deg, rgba(51, 51, 51, 0) 35%, rgba(51, 51, 51, 0.82) 100%);
+}
+
+.page-home .bento-overlay h3 {
+  margin: 0;
+  font-family: var(--font-display);
+  font-weight: 700;
+  color: #fff;
+  line-height: 1;
+}
+
+.page-home .bento-item--lg {
+  grid-column: 1;
+  grid-row: 1;
+}
+
+.page-home .bento-item--lg .bento-overlay h3 {
+  font-size: clamp(36px, 5vw, 64px);
+}
+
+.page-home .bento-col {
+  grid-column: 3;
+  grid-row: 1;
+  display: grid;
+  grid-template-rows: 255px 16px 255px;
+  gap: 0;
+}
+
+.page-home .bento-item--sm .bento-overlay h3 {
+  font-size: clamp(28px, 3.5vw, 48px);
+}
+
+.page-home .bento-item--musica {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.page-home .bento-item--yoga {
+  grid-column: 3;
+  grid-row: 3;
+}
+
+.page-home .bento-item--md .bento-overlay h3 {
+  font-size: clamp(28px, 3.5vw, 48px);
+}
+
+/* Food — full exported frame */
+.page-home .food-figure {
+  margin: 0;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.page-home .food-figure img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Tickets preview */
+.page-home .tickets-preview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 46px 46px;
+}
+
+.page-home .ticket-preview-card {
+  position: relative;
+  min-height: 298px;
+  padding: 24px;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+}
+
+.page-home .ticket-preview-price {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(40px, 5vw, 64px);
+  font-weight: 700;
+  line-height: 1;
+  color: #333;
+}
+
+.page-home .ticket-preview-label {
+  margin: 8px 0 0;
+  font-size: 20px;
+  font-weight: 400;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: #333;
+}
+
+.page-home .ticket-preview-day {
+  margin: 12px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: #333;
+}
+
+.page-home .ticket-preview-card--figma {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  display: block;
+  overflow: hidden;
+  grid-column: 1 / -1;
+}
+
+.page-home .ticket-preview-card--figma img {
+  width: 100%;
+  height: auto;
+  display: block;
+  border-radius: 20px;
+}
+
+.page-home .vendor-banner {
+  display: block;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+/* Home artists */
+.page-home .home-artists {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 16px;
+}
+
+.page-home .home-artist-card {
+  padding: 16px;
+  border-radius: 20px;
+  border: 1px solid var(--color-border);
+  background: #fff;
+}
+
+.page-home .home-artist-tag {
+  display: inline-block;
+  font-family: var(--font-display);
+  font-size: 14px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.page-home .home-artist-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 30px;
+  margin-top: 12px;
+  display: block;
+}
+
+.page-home .home-artist-card h3 {
+  margin: 14px 0 0;
+  font-family: var(--font-display);
+  font-size: clamp(24px, 3vw, 36px);
+  font-weight: 700;
+  color: #10767b;
+}
+
+.page-home .home-artist-card p {
+  margin-top: 6px;
+  font-size: 20px;
+  font-weight: 400;
+  color: #333;
+}
+
+/* Vendor banner */
+.page-home .vendor-banner {
+  position: relative;
+  border-radius: 30px;
+  overflow: hidden;
+}
+
+.page-home .vendor-banner > img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+/* Responsive */
+@media (max-width: 1100px) {
+  .page-home .bento {
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    gap: 16px;
+  }
+
+  .page-home .bento-item--lg,
+  .page-home .bento-col,
+  .page-home .bento-item--md {
+    grid-column: auto;
+    grid-row: auto;
+  }
+
+  .page-home .bento-col {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+  }
+
+  .page-home .bento-item {
+    min-height: 240px;
+  }
+
+  .page-home .bento-item--lg {
+    grid-column: 1 / -1;
+    min-height: 320px;
+  }
+}
+
+@media (max-width: 900px) {
+  .page-home .home-hero-box {
+    min-height: auto;
+    border-radius: 30px;
+  }
+
+  .page-home .tickets-preview {
+    grid-template-columns: 1fr;
+    gap: 16px;
+  }
+
+  .page-home .home-artists {
+    grid-template-columns: 1fr;
+  }
+
+  .page-home .marquee-track span:last-child {
+    display: inline;
+  }
+
+  .page-home .marquee-track {
+    animation: marquee 28s linear infinite;
+    width: max-content;
+    justify-content: flex-start;
+  }
+}
+
+@media (max-width: 600px) {
+  .page-home .hero-actions,
+  .page-home .home-section-header--row {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .page-home .btn-outline-dark,
+  .page-home .btn-white,
+  .page-home .btn-outline-white {
+    width: 100%;
+  }
+}
