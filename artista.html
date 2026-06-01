@@ -7,78 +7,75 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
+<header class="navbar topbar">
     <div class="container navbar-inner">
       <a href="index.html" class="navbar-logo">
-        <img src="assets/logo-ysf.png" alt="Yoga Soul Festival" width="40" height="40">
-        Yoga Soul Festival
+        <img src="assets/logo-ysf.png" alt="" width="49" height="49">
+        <span class="navbar-logo-text">
+          <span class="navbar-logo-yoga">YOGA SOUL</span>
+          <span class="navbar-logo-festival">FESTIVAL</span>
+        </span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <nav class="navbar-links">
-        <a href="index.html" class="navbar-link">Home</a>
-        <a href="programma.html" class="navbar-link">Programma</a>
-        <a href="artisti.html" class="navbar-link is-active">Artisti</a>
-        <a href="biglietti.html" class="navbar-link">Biglietti</a>
-        <a href="vendors.html" class="navbar-link">Vendors</a>
-        <a href="faq.html" class="navbar-link">FAQ</a>
-      </nav>
+      <nav class="navbar-links"><a href="index.html" class="navbar-link">Home</a><a href="programma.html" class="navbar-link">Programma</a><a href="artisti.html" class="navbar-link is-active">Artisti</a><a href="biglietti.html" class="navbar-link">Biglietti</a><a href="vendors.html" class="navbar-link">Vendors</a><a href="faq.html" class="navbar-link">FAQ</a></nav>
       <a href="biglietti.html" class="btn btn-gradient navbar-cta">Acquista →</a>
     </div>
   </header>
 
   <main>
     <section class="section">
-      <div class="container">
+      <div class="container container-content">
         <a href="artisti.html" class="artist-back-link">← Tutti gli artisti</a>
-
         <div class="artist-detail-layout">
           <div class="artist-detail-image">
             <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=800&q=80" alt="Sia">
           </div>
           <div class="artist-detail-panel">
-            <span class="chip tag-pink">Talk</span>
-            <h1 class="artist-detail-name display-serif">Sia</h1>
+            <span class="chip tag-pink">TALK</span>
+            <h1 class="artist-detail-name">Sia</h1>
             <p class="artist-detail-role">Foto reporter</p>
-            <p class="artist-detail-desc">Descrizione di ciò che l'artista fa. 3 righe massimo. Racconta la sua esperienza, il suo approccio e cosa porterà al festival in questi due giorni di condivisione.</p>
+            <p class="artist-detail-desc">Descrizione di ciò che l'artista fa. 3 righe massimo.</p>
           </div>
         </div>
-
-        <div style="margin-top:40px;">
-          <h2 class="inner-page-title display-serif" style="font-size:clamp(28px,4vw,42px);">Dove e quando mi trovi</h2>
-
-          <div class="program-list" style="margin-top:18px;">
+        <div class="artist-schedule-section">
+          <h2 class="inner-page-title schedule-title">Dove e quando mi trovi</h2>
+          <div class="program-list">
             <h3 class="program-day-header">Sabato 26 Settembre</h3>
-            <div class="program-row" style="grid-template-columns:140px 1fr 150px;">
-              <span class="program-time">🕐 9:00—10:00</span>
+            <div class="program-row program-row-compact">
+              <span class="program-time">9:00—10:00</span>
               <div class="program-title">Titolo attività</div>
-              <span class="program-location">📍 Area 1</span>
+              <span class="program-location">Area 1</span>
             </div>
-            <div class="program-row" style="grid-template-columns:140px 1fr 150px;">
-              <span class="program-time">🕐 15:00—16:00</span>
+            <div class="program-row program-row-compact">
+              <span class="program-time">9:00—10:00</span>
               <div class="program-title">Titolo attività</div>
-              <span class="program-location">📍 Area 3</span>
+              <span class="program-location">Area 1</span>
             </div>
           </div>
-
-          <div class="program-list" style="margin-top:14px;">
+          <div class="program-list program-list-spaced">
             <h3 class="program-day-header">Domenica 27 Settembre</h3>
-            <div class="program-row" style="grid-template-columns:140px 1fr 150px;">
-              <span class="program-time">🕐 11:00—12:00</span>
+            <div class="program-row program-row-compact">
+              <span class="program-time">9:00—10:00</span>
               <div class="program-title">Titolo attività</div>
-              <span class="program-location">📍 Area 2</span>
+              <span class="program-location">Area 1</span>
             </div>
           </div>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
+<footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <div class="footer-brand-title">Yoga Soul Festival</div>
+        <a href="index.html" class="footer-logo">
+          <img src="assets/logo-ysf.png" alt="" width="49" height="49">
+          <span class="navbar-logo-text">
+            <span class="navbar-logo-yoga">YOGA SOUL</span>
+            <span class="navbar-logo-festival">FESTIVAL</span>
+          </span>
+        </a>
         <p class="footer-tagline">Due giorni per riconnetterti con la tua essenza. Orbassano (TO), 26–27 Settembre 2026.</p>
         <p class="footer-riconnettiti">Riconnettiti.</p>
       </div>
@@ -96,7 +93,7 @@
       <div>
         <div class="footer-col-title">Contatti</div>
         <p class="footer-tagline">email@yogasoulfestival.com</p>
-        <p class="footer-tagline">Orbassano — Torino — ITALIA</p>
+        <p class="footer-tagline">Orbassano-Torino-ITALIA</p>
         <div class="footer-pills">
           <span class="footer-pill">VEG</span>
           <span class="footer-pill">BENESSERE</span>
@@ -105,7 +102,6 @@
       </div>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

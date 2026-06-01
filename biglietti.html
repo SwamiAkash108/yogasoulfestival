@@ -7,65 +7,59 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
+<header class="navbar topbar">
     <div class="container navbar-inner">
       <a href="index.html" class="navbar-logo">
-        <img src="assets/logo-ysf.png" alt="Yoga Soul Festival" width="40" height="40">
-        Yoga Soul Festival
+        <img src="assets/logo-ysf.png" alt="" width="49" height="49">
+        <span class="navbar-logo-text">
+          <span class="navbar-logo-yoga">YOGA SOUL</span>
+          <span class="navbar-logo-festival">FESTIVAL</span>
+        </span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <nav class="navbar-links">
-        <a href="index.html" class="navbar-link">Home</a>
-        <a href="programma.html" class="navbar-link">Programma</a>
-        <a href="artisti.html" class="navbar-link">Artisti</a>
-        <a href="biglietti.html" class="navbar-link is-active">Biglietti</a>
-        <a href="vendors.html" class="navbar-link">Vendors</a>
-        <a href="faq.html" class="navbar-link">FAQ</a>
-      </nav>
+      <nav class="navbar-links"><a href="index.html" class="navbar-link">Home</a><a href="programma.html" class="navbar-link">Programma</a><a href="artisti.html" class="navbar-link">Artisti</a><a href="biglietti.html" class="navbar-link is-active">Biglietti</a><a href="vendors.html" class="navbar-link">Vendors</a><a href="faq.html" class="navbar-link">FAQ</a></nav>
       <a href="biglietti.html" class="btn btn-gradient navbar-cta">Acquista →</a>
     </div>
   </header>
 
   <main>
     <section class="inner-page-header">
-      <div class="container">
-        <p class="eyebrow">— Biglietti —</p>
+      <div class="container container-content">
+        <p class="eyebrow">– Biglietti –</p>
         <h1 class="inner-page-title">Scegli la tua <span class="highlight-teal">formula.</span></h1>
         <p class="inner-page-subtext">Tre modi per vivere il festival. Per tutti è incluso un welcome kit pensato per accompagnarti in queste due giornate di benessere.</p>
       </div>
     </section>
-
-    <section class="section" style="padding-top:0;">
-      <div class="container">
+    <section class="section section-tight">
+      <div class="container container-content">
         <div class="tickets-grid">
           <article class="ticket-card">
             <p class="ticket-price">18 €</p>
-            <h3>1 giornata a tua scelta</h3>
-            <ul style="margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px;">
-              <li style="display:flex;gap:8px;color:var(--color-muted);"><span style="color:var(--color-teal-primary);font-weight:800;">✓</span> Accesso a tutte le attività FREE della giornata</li>
-              <li style="display:flex;gap:8px;color:var(--color-muted);"><span style="color:var(--color-teal-primary);font-weight:800;">✓</span> Accesso area vendors e cucina veg</li>
-              <li style="display:flex;gap:8px;color:var(--color-muted);"><span style="color:var(--color-teal-primary);font-weight:800;">✓</span> Welcome kit di benvenuto</li>
+            <p class="pricing-label">1 GIORNATA A TUA SCELTA</p>
+            <ul class="ticket-features">
+              <li>Accesso a tutte le attività FREE della giornata</li>
+              <li>Accesso area vendors e cucina veg</li>
+              <li>Welcome kit di benvenuto</li>
             </ul>
-            <a href="#" class="btn btn-dark" style="margin-top:20px;">Acquista →</a>
+            <a href="#" class="btn btn-dark">Acquista →</a>
           </article>
           <article class="ticket-card ticket-card--featured">
             <p class="ticket-price">36 €</p>
-            <h3>Intero festival, 2 giorni</h3>
-            <ul style="margin:16px 0 0;padding:0;list-style:none;display:grid;gap:8px;">
-              <li style="display:flex;gap:8px;color:var(--color-muted);"><span style="color:var(--color-teal-primary);font-weight:800;">✓</span> Accesso a tutte le attività FREE del festival</li>
-              <li style="display:flex;gap:8px;color:var(--color-muted);"><span style="color:var(--color-teal-primary);font-weight:800;">✓</span> Accesso area vendors e cucina veg</li>
-              <li style="display:flex;gap:8px;color:var(--color-muted);"><span style="color:var(--color-teal-primary);font-weight:800;">✓</span> Welcome kit di benvenuto premium</li>
-              <li style="display:flex;gap:8px;color:var(--color-muted);"><span style="color:var(--color-teal-primary);font-weight:800;">✓</span> Sconti del 10% su tutti i prodotti</li>
+            <p class="pricing-label">INTERO FESTIVAL, 2 GIORNI</p>
+            <ul class="ticket-features">
+              <li>Accesso a tutte le attività FREE del festival</li>
+              <li>Accesso area vendors e cucina veg</li>
+              <li>Welcome kit di benvenuto premium</li>
+              <li>Sconti del 10% su tutti i prodotti</li>
             </ul>
-            <a href="#" class="btn btn-dark" style="margin-top:20px;">Acquista →</a>
+            <a href="#" class="btn btn-dark">Acquista →</a>
           </article>
         </div>
-
         <div class="welcome-kit-bar">
-          <p style="font-size:12px;font-weight:800;letter-spacing:0.08em;text-transform:uppercase;color:var(--color-orange-accent);">Per tutti i biglietti:</p>
-          <h3 style="margin-top:6px;font-size:clamp(24px,3vw,32px);">Welcome kit</h3>
+          <p class="welcome-kit-eyebrow">Per tutti i biglietti:</p>
+          <h3 class="welcome-kit-title">Welcome kit</h3>
           <div class="welcome-kit-grid">
             <ul>
               <li>Borsa in cotone organico</li>
@@ -81,11 +75,16 @@
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
+<footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <div class="footer-brand-title">Yoga Soul Festival</div>
+        <a href="index.html" class="footer-logo">
+          <img src="assets/logo-ysf.png" alt="" width="49" height="49">
+          <span class="navbar-logo-text">
+            <span class="navbar-logo-yoga">YOGA SOUL</span>
+            <span class="navbar-logo-festival">FESTIVAL</span>
+          </span>
+        </a>
         <p class="footer-tagline">Due giorni per riconnetterti con la tua essenza. Orbassano (TO), 26–27 Settembre 2026.</p>
         <p class="footer-riconnettiti">Riconnettiti.</p>
       </div>
@@ -103,7 +102,7 @@
       <div>
         <div class="footer-col-title">Contatti</div>
         <p class="footer-tagline">email@yogasoulfestival.com</p>
-        <p class="footer-tagline">Orbassano — Torino — ITALIA</p>
+        <p class="footer-tagline">Orbassano-Torino-ITALIA</p>
         <div class="footer-pills">
           <span class="footer-pill">VEG</span>
           <span class="footer-pill">BENESSERE</span>
@@ -112,7 +111,6 @@
       </div>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>

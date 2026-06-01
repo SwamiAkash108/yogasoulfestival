@@ -7,41 +7,37 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <header class="navbar">
+<header class="navbar topbar">
     <div class="container navbar-inner">
       <a href="index.html" class="navbar-logo">
-        <img src="assets/logo-ysf.png" alt="Yoga Soul Festival" width="40" height="40">
-        Yoga Soul Festival
+        <img src="assets/logo-ysf.png" alt="" width="49" height="49">
+        <span class="navbar-logo-text">
+          <span class="navbar-logo-yoga">YOGA SOUL</span>
+          <span class="navbar-logo-festival">FESTIVAL</span>
+        </span>
       </a>
       <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
-      <nav class="navbar-links">
-        <a href="index.html" class="navbar-link">Home</a>
-        <a href="programma.html" class="navbar-link">Programma</a>
-        <a href="artisti.html" class="navbar-link is-active">Artisti</a>
-        <a href="biglietti.html" class="navbar-link">Biglietti</a>
-        <a href="vendors.html" class="navbar-link">Vendors</a>
-        <a href="faq.html" class="navbar-link">FAQ</a>
-      </nav>
+      <nav class="navbar-links"><a href="index.html" class="navbar-link">Home</a><a href="programma.html" class="navbar-link">Programma</a><a href="artisti.html" class="navbar-link is-active">Artisti</a><a href="biglietti.html" class="navbar-link">Biglietti</a><a href="vendors.html" class="navbar-link">Vendors</a><a href="faq.html" class="navbar-link">FAQ</a></nav>
       <a href="biglietti.html" class="btn btn-gradient navbar-cta">Acquista →</a>
     </div>
   </header>
 
   <main data-filter-page="artisti">
     <section class="inner-page-header">
-      <div class="container">
-        <p class="eyebrow">— Artisti —</p>
+      <div class="container container-content">
+        <p class="eyebrow">– Artisti –</p>
         <h1 class="inner-page-title">Le voci del <span class="highlight-orange">festival</span>.</h1>
         <p class="inner-page-subtext">Insegnanti, musicisti, facilitatori e voci che condivideranno con te questi due giorni.</p>
-        <div style="margin-top:24px;display:flex;flex-direction:column;align-items:center;">
+        <div class="filters-wrap">
           <div class="day-filters">
             <button type="button" class="filter-pill day-pill is-active" data-day-filter="both">Entrambi i giorni</button>
             <button type="button" class="filter-pill day-pill" data-day-filter="sabato">Sabato 26</button>
             <button type="button" class="filter-pill day-pill" data-day-filter="domenica">Domenica 27</button>
           </div>
-          <div class="category-filters" style="margin-top:12px;justify-content:center;">
-            <button type="button" class="filter-pill category-pill is-active" data-cat-filter="all">Tutti</button>
+          <div class="category-filters">
+            <button type="button" class="filter-pill category-pill is-active" data-cat-filter="all">Tutte</button>
             <button type="button" class="filter-pill category-pill" data-cat-filter="yoga">Yoga</button>
             <button type="button" class="filter-pill category-pill" data-cat-filter="meditazione">Meditazione</button>
             <button type="button" class="filter-pill category-pill" data-cat-filter="workshop">Workshop</button>
@@ -51,85 +47,101 @@
         </div>
       </div>
     </section>
-
-    <section class="section" style="padding-top:0;">
-      <div class="container">
+    <section class="section section-tight">
+      <div class="container container-content">
         <div class="artists-grid">
           <article class="artist-card" data-day="both" data-cat="musica">
-            <div class="artist-card-media" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80');"></div>
-            <div class="artist-card-body">
+            <div class="artist-card-body artist-card-body-top">
               <div class="artist-card-top">
-                <span class="chip tag-yellow">Musica</span>
+                <span class="chip tag-yellow">MUSICA</span>
                 <a href="artista.html" class="artist-card-link">Dettagli →</a>
               </div>
+            </div>
+            <div class="artist-card-media" style="background-image:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80');"></div>
+            <div class="artist-card-body">
               <h2 class="artist-card-name">Michael Jackson</h2>
               <p class="artist-card-role">Voce e Musico-terapeuta</p>
             </div>
           </article>
           <article class="artist-card" data-day="sabato" data-cat="talk">
-            <div class="artist-card-media" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80');"></div>
-            <div class="artist-card-body">
+            <div class="artist-card-body artist-card-body-top">
               <div class="artist-card-top">
-                <span class="chip tag-pink">Talk</span>
+                <span class="chip tag-pink">TALK</span>
                 <a href="artista.html" class="artist-card-link">Dettagli →</a>
               </div>
+            </div>
+            <div class="artist-card-media" style="background-image:url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80');"></div>
+            <div class="artist-card-body">
               <h2 class="artist-card-name">Sia</h2>
               <p class="artist-card-role">Foto reporter</p>
             </div>
           </article>
           <article class="artist-card" data-day="both" data-cat="yoga">
-            <div class="artist-card-media" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80');"></div>
-            <div class="artist-card-body">
+            <div class="artist-card-body artist-card-body-top">
               <div class="artist-card-top">
-                <span class="chip tag-teal">Yoga</span>
+                <span class="chip tag-teal">YOGA</span>
                 <a href="artista.html" class="artist-card-link">Dettagli →</a>
               </div>
+            </div>
+            <div class="artist-card-media" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80');"></div>
+            <div class="artist-card-body">
               <h2 class="artist-card-name">Pino Daniele</h2>
               <p class="artist-card-role">Vinyasa Yoga</p>
             </div>
           </article>
-          <article class="artist-card" data-day="domenica" data-cat="meditazione">
-            <div class="artist-card-media" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80');"></div>
-            <div class="artist-card-body">
-              <div class="artist-card-top">
-                <span class="chip tag-teal">Meditazione</span>
-                <a href="artista.html" class="artist-card-link">Dettagli →</a>
-              </div>
-              <h2 class="artist-card-name">Nome Artista</h2>
-              <p class="artist-card-role">Facilitatore mindfulness</p>
-            </div>
-          </article>
-          <article class="artist-card" data-day="sabato" data-cat="workshop">
-            <div class="artist-card-media" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=600&q=80');"></div>
-            <div class="artist-card-body">
-              <div class="artist-card-top">
-                <span class="chip tag-yellow">Workshop</span>
-                <a href="artista.html" class="artist-card-link">Dettagli →</a>
-              </div>
-              <h2 class="artist-card-name">Nome Artista</h2>
-              <p class="artist-card-role">Workshop creativo</p>
-            </div>
-          </article>
           <article class="artist-card" data-day="domenica" data-cat="musica">
-            <div class="artist-card-media" style="background-image: url('https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=600&q=80');"></div>
-            <div class="artist-card-body">
+            <div class="artist-card-body artist-card-body-top">
               <div class="artist-card-top">
-                <span class="chip tag-yellow">Musica</span>
+                <span class="chip tag-yellow">MUSICA</span>
                 <a href="artista.html" class="artist-card-link">Dettagli →</a>
               </div>
-              <h2 class="artist-card-name">Nome Artista</h2>
-              <p class="artist-card-role">Cantante e compositrice</p>
+            </div>
+            <div class="artist-card-media" style="background-image:url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80');"></div>
+            <div class="artist-card-body">
+              <h2 class="artist-card-name">Michael Jackson</h2>
+              <p class="artist-card-role">Voce e Musico-terapeuta</p>
+            </div>
+          </article>
+          <article class="artist-card" data-day="sabato" data-cat="talk">
+            <div class="artist-card-body artist-card-body-top">
+              <div class="artist-card-top">
+                <span class="chip tag-pink">TALK</span>
+                <a href="artista.html" class="artist-card-link">Dettagli →</a>
+              </div>
+            </div>
+            <div class="artist-card-media" style="background-image:url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80');"></div>
+            <div class="artist-card-body">
+              <h2 class="artist-card-name">Sia</h2>
+              <p class="artist-card-role">Foto reporter</p>
+            </div>
+          </article>
+          <article class="artist-card" data-day="both" data-cat="yoga">
+            <div class="artist-card-body artist-card-body-top">
+              <div class="artist-card-top">
+                <span class="chip tag-teal">YOGA</span>
+                <a href="artista.html" class="artist-card-link">Dettagli →</a>
+              </div>
+            </div>
+            <div class="artist-card-media" style="background-image:url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80');"></div>
+            <div class="artist-card-body">
+              <h2 class="artist-card-name">Pino Daniele</h2>
+              <p class="artist-card-role">Vinyasa Yoga</p>
             </div>
           </article>
         </div>
       </div>
     </section>
   </main>
-
-  <footer class="site-footer">
+<footer class="site-footer">
     <div class="container footer-grid">
       <div>
-        <div class="footer-brand-title">Yoga Soul Festival</div>
+        <a href="index.html" class="footer-logo">
+          <img src="assets/logo-ysf.png" alt="" width="49" height="49">
+          <span class="navbar-logo-text">
+            <span class="navbar-logo-yoga">YOGA SOUL</span>
+            <span class="navbar-logo-festival">FESTIVAL</span>
+          </span>
+        </a>
         <p class="footer-tagline">Due giorni per riconnetterti con la tua essenza. Orbassano (TO), 26–27 Settembre 2026.</p>
         <p class="footer-riconnettiti">Riconnettiti.</p>
       </div>
@@ -147,7 +159,7 @@
       <div>
         <div class="footer-col-title">Contatti</div>
         <p class="footer-tagline">email@yogasoulfestival.com</p>
-        <p class="footer-tagline">Orbassano — Torino — ITALIA</p>
+        <p class="footer-tagline">Orbassano-Torino-ITALIA</p>
         <div class="footer-pills">
           <span class="footer-pill">VEG</span>
           <span class="footer-pill">BENESSERE</span>
@@ -156,7 +168,6 @@
       </div>
     </div>
   </footer>
-
   <script src="script.js"></script>
 </body>
 </html>
