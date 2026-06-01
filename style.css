@@ -298,13 +298,14 @@ p {
 .footer-logo {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
+  gap: 3px;
   color: var(--color-teal);
 }
 
 .navbar-logo-text {
   display: flex;
   flex-direction: column;
+  gap: 2px;
   line-height: 1.05;
 }
 
