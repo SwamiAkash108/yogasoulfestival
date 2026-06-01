@@ -1,149 +1,102 @@
-/* ==========================================================================
-   YOGA SOUL FESTIVAL — Script principale
-   ========================================================================== */
-
 (function () {
-  'use strict';
+  "use strict";
 
-  // ---------- NAVBAR: scroll effect ----------
-  const navbar = document.getElementById('navbar');
-  if (navbar) {
-    const onScroll = () => {
-      if (window.scrollY > 30) navbar.classList.add('navbar--scrolled');
-      else navbar.classList.remove('navbar--scrolled');
-    };
-    window.addEventListener('scroll', onScroll, { passive: true });
-    onScroll();
-  }
+  var navToggle = document.querySelector(".nav-toggle");
+  var navLinks = document.querySelector(".navbar-links");
 
-  // ---------- NAVBAR: mobile toggle ----------
-  const navToggle = document.getElementById('navToggle');
-  const navLinks = document.getElementById('navLinks');
   if (navToggle && navLinks) {
-    navToggle.addEventListener('click', () => {
-      navToggle.classList.toggle('open');
-      navLinks.classList.toggle('open');
-    });
-    // chiudi quando clicchi un link
-    navLinks.querySelectorAll('a').forEach(a => {
-      a.addEventListener('click', () => {
-        navToggle.classList.remove('open');
-        navLinks.classList.remove('open');
-      });
+    navToggle.addEventListener("click", function () {
+      var open = navLinks.classList.toggle("is-open");
+      navToggle.classList.toggle("open", open);
+      navToggle.setAttribute("aria-expanded", open ? "true" : "false");
     });
   }
 
-  // ---------- DAY TABS (Programma) ----------
-  const dayTabs = document.querySelectorAll('.day-tab[data-day]');
-  if (dayTabs.length) {
-    dayTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const day = tab.dataset.day;
-        document.querySelectorAll('.day-tab[data-day]').forEach(t => t.classList.remove('active'));
-        document.querySelectorAll('.day-panel').forEach(p => p.classList.remove('active'));
-        tab.classList.add('active');
-        const panel = document.getElementById('day-' + day);
-        if (panel) panel.classList.add('active');
+  document.querySelectorAll(".faq-question").forEach(function (btn) {
+    btn.addEventListener("click", function () {
+      var item = btn.closest(".faq-item");
+      var isOpen = item.classList.contains("is-open");
+
+      document.querySelectorAll(".faq-item.is-open").forEach(function (el) {
+        el.classList.remove("is-open");
+        el.querySelector(".faq-question").setAttribute("aria-expanded", "false");
       });
-    });
-  }
 
-  // ---------- FILTRI INSEGNANTI ----------
-  const filterTabs = document.querySelectorAll('.day-tab[data-filter]');
-  if (filterTabs.length) {
-    filterTabs.forEach(tab => {
-      tab.addEventListener('click', () => {
-        const filter = tab.dataset.filter;
-        document.querySelectorAll('.day-tab[data-filter]').forEach(t => t.classList.remove('active'));
-        tab.classList.add('active');
-        document.querySelectorAll('.teacher[data-cat]').forEach(card => {
-          if (filter === 'all' || card.dataset.cat === filter) {
-            card.style.display = '';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-  }
-
-  // ---------- FAQ ACCORDION ----------
-  document.querySelectorAll('.faq-question').forEach(btn => {
-    btn.addEventListener('click', () => {
-      const item = btn.closest('.faq-item');
-      if (!item) return;
-      const open = item.classList.contains('open');
-      // chiudi tutti gli altri (accordion comportamento)
-      document.querySelectorAll('.faq-item.open').forEach(el => el.classList.remove('open'));
-      if (!open) item.classList.add('open');
-    });
-  });
-
-  // ---------- SMOOTH SCROLL per link ancora ----------
-  document.querySelectorAll('a[href^="#"]').forEach(a => {
-    const href = a.getAttribute('href');
-    if (href.length <= 1) return;
-    a.addEventListener('click', (e) => {
-      const target = document.querySelector(href);
-      if (target) {
-        e.preventDefault();
-        const top = target.getBoundingClientRect().top + window.scrollY - 80;
-        window.scrollTo({ top, behavior: 'smooth' });
+      if (!isOpen) {
+        item.classList.add("is-open");
+        btn.setAttribute("aria-expanded", "true");
       }
     });
   });
 
-  // ---------- EXPERIENCE CAROUSEL ----------
-  const carousel = document.getElementById('experienceCarousel');
-  const carouselPrev = document.getElementById('carouselPrev');
-  const carouselNext = document.getElementById('carouselNext');
-  const carouselProgress = document.getElementById('carouselProgress');
+  function initFilters(config) {
+    var dayButtons = document.querySelectorAll(config.daySelector);
+    var catButtons = document.querySelectorAll(config.catSelector);
+    var items = document.querySelectorAll(config.itemSelector);
+    var daySections = config.daySectionSelector
+      ? document.querySelectorAll(config.daySectionSelector)
+      : [];
 
-  if (carousel && carouselPrev && carouselNext && carouselProgress) {
-    const getScrollStep = () => {
-      const slide = carousel.querySelector('.carousel-slide');
-      if (!slide) return 240;
-      const gap = parseFloat(getComputedStyle(carousel).gap) || 16;
-      return slide.offsetWidth + gap;
-    };
+    var activeDay = "both";
+    var activeCat = "all";
 
-    const updateCarousel = () => {
-      const maxScroll = carousel.scrollWidth - carousel.clientWidth;
-      const ratio = maxScroll > 0 ? carousel.scrollLeft / maxScroll : 0;
-      carouselProgress.style.width = (ratio * 100) + '%';
-      carouselPrev.disabled = carousel.scrollLeft <= 4;
-      carouselNext.disabled = carousel.scrollLeft >= maxScroll - 4;
-    };
-
-    carouselPrev.addEventListener('click', () => {
-      carousel.scrollBy({ left: -getScrollStep(), behavior: 'smooth' });
-    });
-    carouselNext.addEventListener('click', () => {
-      carousel.scrollBy({ left: getScrollStep(), behavior: 'smooth' });
-    });
-    carousel.addEventListener('scroll', updateCarousel, { passive: true });
-    window.addEventListener('resize', updateCarousel);
-    updateCarousel();
-  }
-
-  // ---------- REVEAL ON SCROLL (animazione leggera) ----------
-  if ('IntersectionObserver' in window) {
-    const obs = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          entry.target.style.opacity = '1';
-          entry.target.style.transform = 'none';
-          obs.unobserve(entry.target);
-        }
+    function applyFilters() {
+      items.forEach(function (item) {
+        var day = item.getAttribute("data-day") || "both";
+        var cat = item.getAttribute("data-cat") || "all";
+        var dayMatch = activeDay === "both" || day === activeDay || day === "both";
+        var catMatch = activeCat === "all" || cat === activeCat;
+        item.classList.toggle("hidden", !(dayMatch && catMatch));
       });
-    }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
 
-    document.querySelectorAll('.card, .teacher, .feature, .feature-row, .schedule-item, .price-card, .testimonial').forEach(el => {
-      el.style.opacity = '0';
-      el.style.transform = 'translateY(20px)';
-      el.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
-      obs.observe(el);
+      if (daySections.length) {
+        daySections.forEach(function (section) {
+          var sectionDay = section.getAttribute("data-day-section");
+          var visible = section.querySelectorAll(config.itemSelector + ":not(.hidden)");
+          var showSection =
+            activeDay === "both" || sectionDay === activeDay;
+          section.classList.toggle("hidden", !showSection || visible.length === 0);
+        });
+      }
+    }
+
+    dayButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        dayButtons.forEach(function (b) {
+          b.classList.remove("is-active");
+        });
+        btn.classList.add("is-active");
+        activeDay = btn.getAttribute("data-day-filter") || "both";
+        applyFilters();
+      });
+    });
+
+    catButtons.forEach(function (btn) {
+      btn.addEventListener("click", function () {
+        catButtons.forEach(function (b) {
+          b.classList.remove("is-active");
+        });
+        btn.classList.add("is-active");
+        activeCat = btn.getAttribute("data-cat-filter") || "all";
+        applyFilters();
+      });
     });
   }
 
+  if (document.querySelector("[data-filter-page='programma']")) {
+    initFilters({
+      daySelector: "[data-filter-page='programma'] .day-pill",
+      catSelector: "[data-filter-page='programma'] .category-pill",
+      itemSelector: "[data-filter-page='programma'] .program-row",
+      daySectionSelector: "[data-filter-page='programma'] .program-list",
+    });
+  }
+
+  if (document.querySelector("[data-filter-page='artisti']")) {
+    initFilters({
+      daySelector: "[data-filter-page='artisti'] .day-pill",
+      catSelector: "[data-filter-page='artisti'] .category-pill",
+      itemSelector: "[data-filter-page='artisti'] .artist-card",
+    });
+  }
 })();

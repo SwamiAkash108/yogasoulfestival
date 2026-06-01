@@ -1,339 +1,221 @@
 <!DOCTYPE html>
 <html lang="it">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Yoga Soul Festival 2026 — Riconnettiti con la tua essenza</title>
-<meta name="description" content="Yoga Soul Festival 2026 — 26 e 27 settembre. Un weekend di musica, yoga, conferenze e benessere. Riconnettiti con la tua essenza.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="preconnect" href="https://images.unsplash.com">
-<link href="https://fonts.googleapis.com/css2?family=Amatic+SC:wght@400;700&family=Skranji:wght@400;700&family=Urbanist:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns=%27http://www.w3.org/2000/svg%27 viewBox=%270 0 100 100%27%3E%3Ccircle cx=%2750%27 cy=%2750%27 r=%2748%27 fill=%27%23FDF5EE%27/%3E%3Cg transform=%27translate(50 50)%27 fill=%27%230F4044%27%3E%3Cellipse cx=%270%27 cy=%27-25%27 rx=%276%27 ry=%2718%27/%3E%3Cellipse cx=%270%27 cy=%27-25%27 rx=%276%27 ry=%2718%27 transform=%27rotate(45)%27/%3E%3Cellipse cx=%270%27 cy=%27-25%27 rx=%276%27 ry=%2718%27 transform=%27rotate(90)%27/%3E%3Cellipse cx=%270%27 cy=%27-25%27 rx=%276%27 ry=%2718%27 transform=%27rotate(135)%27/%3E%3Cellipse cx=%270%27 cy=%27-25%27 rx=%276%27 ry=%2718%27 transform=%27rotate(180)%27/%3E%3Cellipse cx=%270%27 cy=%27-25%27 rx=%276%27 ry=%2718%27 transform=%27rotate(225)%27/%3E%3Cellipse cx=%270%27 cy=%27-25%27 rx=%276%27 ry=%2718%27 transform=%27rotate(270)%27/%3E%3Cellipse cx=%270%27 cy=%27-25%27 rx=%276%27 ry=%2718%27 transform=%27rotate(315)%27/%3E%3Ccircle r=%275%27/%3E%3C/g%3E%3C/svg%3E">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Yoga Soul Festival — Home</title>
+  <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/logo-ysf.png" alt="Yoga Soul Festival" width="40" height="40">
+        Yoga Soul Festival
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="navbar-links">
+        <a href="index.html" class="navbar-link is-active">Home</a>
+        <a href="programma.html" class="navbar-link">Programma</a>
+        <a href="artisti.html" class="navbar-link">Artisti</a>
+        <a href="biglietti.html" class="navbar-link">Biglietti</a>
+        <a href="vendors.html" class="navbar-link">Vendors</a>
+        <a href="faq.html" class="navbar-link">FAQ</a>
+      </nav>
+      <a href="biglietti.html" class="btn btn-gradient navbar-cta">Acquista →</a>
+    </div>
+  </header>
 
-<!-- NAVBAR -->
-<nav class="navbar" id="navbar">
-  <div class="nav-inner">
-    <a href="index.html" class="nav-logo">
-      <span class="nav-logo-mark">
-        <img src="assets/logo-ysf.png" alt="" width="56" height="56">
-      </span>
-      <span>Yoga Soul Festival<small>Edizione 2026</small></span>
-    </a>
-    <button class="nav-toggle" id="navToggle" aria-label="Apri menu">
-      <span></span><span></span><span></span>
-    </button>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html" class="active">Home</a>
-      <a href="programma.html">Programma</a>
-      <a href="insegnanti.html">Insegnanti</a>
-      <a href="iscrizioni.html">Iscrizioni</a>
-      <a href="sponsors.html">Sponsor</a>
-      <a href="contatti.html">Contatti</a>
-      <a href="iscrizioni.html" class="nav-cta">Compra il biglietto</a>
-    </div>
-  </div>
-</nav>
-
-<!-- HERO -->
-<header class="hero">
-  <div class="hero-bg" style="background-image: url('https://images.unsplash.com/photo-1545389336-cf090694435e?w=1920&q=80&auto=format&fit=crop');"></div>
-  <div class="container hero-content">
-    <div class="hero-date">26 &amp; 27 Settembre 2026</div>
-    <div class="hero-location">Orbassano (TO)</div>
-    <h1>Unisciti a noi per un weekend<br>di amore, benessere e comunità</h1>
-    <div class="hero-actions">
-      <a href="iscrizioni.html" class="btn btn-primary">Voglio il mio biglietto</a>
-    </div>
-  </div>
-</header>
-
-<!-- INTRO -->
-<section class="section section--gradient">
-  <div class="container">
-    <div class="intro-block">
-      <span class="eyebrow">Respira · Riconnettiti · Rinasci</span>
-      <div class="intro-date">26 &amp; 27 Settembre 2026</div>
-      <p class="lead" style="margin: 0 auto;">Yoga Soul Festival è uno spazio dove l'anima fiorisce, la vita si celebra in sorrisi e l'amore prevale!</p>
-      <p style="margin-top: 1.25rem; max-width: 58ch; margin-left: auto; margin-right: auto; opacity: 0.9;">Due giorni di musica, yoga, conferenze e meditazione, con workshop e lezioni pensati per calmare la mente e nutrire il cuore, offrendoti strumenti per la vita quotidiana.</p>
-    </div>
-  </div>
-</section>
-
-<!-- ESPERIENZA — CAROUSEL -->
-<section class="section experience-carousel" aria-label="Le esperienze del festival">
-  <div class="container">
-    <div class="carousel-header">
-      <div class="carousel-header-text">
-        <h2>Vivi l'esperienza</h2>
-        <p class="carousel-lead">Yoga Soul Festival ti porta in un weekend di musica, yoga, conferenze e benessere nel cuore del Piemonte. Celebra la bellezza della pratica attraverso rituali, incontri e molto altro!</p>
-      </div>
-      <div class="carousel-nav">
-        <button type="button" class="carousel-btn carousel-btn--prev" id="carouselPrev" aria-label="Slide precedente">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg>
-        </button>
-        <button type="button" class="carousel-btn carousel-btn--next" id="carouselNext" aria-label="Slide successiva">
-          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 18l6-6-6-6"/></svg>
-        </button>
-      </div>
-    </div>
-  </div>
-  <div class="carousel-track-wrap">
-    <div class="carousel-track" id="experienceCarousel" tabindex="0">
-      <article class="carousel-slide">
-        <div class="carousel-slide-image" style="background-image: url('https://images.unsplash.com/photo-1529156069898-49953e39b3ac?w=600&q=80&auto=format&fit=crop');"></div>
-        <span class="carousel-slide-label">Comunità</span>
-      </article>
-      <article class="carousel-slide">
-        <div class="carousel-slide-image" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=600&q=80&auto=format&fit=crop');"></div>
-        <span class="carousel-slide-label">Musica</span>
-      </article>
-      <article class="carousel-slide">
-        <div class="carousel-slide-image" style="background-image: url('https://images.unsplash.com/photo-1504609773866-021816d0d332?w=600&q=80&auto=format&fit=crop');"></div>
-        <span class="carousel-slide-label">Danza</span>
-      </article>
-      <article class="carousel-slide">
-        <div class="carousel-slide-image" style="background-image: url('https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=600&q=80&auto=format&fit=crop');"></div>
-        <span class="carousel-slide-label">Conferenze</span>
-      </article>
-      <article class="carousel-slide">
-        <div class="carousel-slide-image" style="background-image: url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=600&q=80&auto=format&fit=crop');"></div>
-        <span class="carousel-slide-label">Yoga &amp; meditazione</span>
-      </article>
-      <article class="carousel-slide">
-        <div class="carousel-slide-image" style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=600&q=80&auto=format&fit=crop');"></div>
-        <span class="carousel-slide-label">Benessere</span>
-      </article>
-    </div>
-  </div>
-  <div class="container">
-    <div class="carousel-progress" aria-hidden="true">
-      <div class="carousel-progress-bar" id="carouselProgress"></div>
-    </div>
-  </div>
-</section>
-
-<!-- I QUATTRO PILASTRI -->
-<section class="section section--soft">
-  <div class="container">
-    <div class="feature-rows">
-      <article class="feature-row">
-        <div class="feature-row-image" style="background-image: url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80&auto=format&fit=crop');"></div>
-        <div class="feature-row-body">
-          <h3>Musica</h3>
-          <p>La musica è il cuore del festival! Durante due giorni potrai cantare, danzare e semplicemente essere felice, con concerti che ti avvolgono in un'energia di gioia e connessione.</p>
-        </div>
-      </article>
-      <article class="feature-row reverse">
-        <div class="feature-row-image" style="background-image: url('https://images.unsplash.com/photo-1545205597-3d9d02c29597?w=800&q=80&auto=format&fit=crop');"></div>
-        <div class="feature-row-body">
-          <h3>Yoga</h3>
-          <p>Pratiche per ogni livello: vinyasa all'alba, hatha tradizionale, yin yoga al tramonto, kundalini e meditazione. Insegnanti italiani e internazionali per scoprire, imparare e condividere.</p>
-        </div>
-      </article>
-      <article class="feature-row">
-        <div class="feature-row-image" style="background-image: url('https://images.unsplash.com/photo-1475721027785-f74eccf877e2?w=800&q=80&auto=format&fit=crop');"></div>
-        <div class="feature-row-body">
-          <h3>Conferenze</h3>
-          <p>Talk di filosofia, ayurveda, psicologia somatica e sviluppo personale. Spazi di dialogo profondo con maestri, ricercatori e voci ispirate per ascoltare il cuore.</p>
-        </div>
-      </article>
-      <article class="feature-row reverse">
-        <div class="feature-row-image" style="background-image: url('https://images.unsplash.com/photo-1545389336-cf090694435e?w=800&q=80&auto=format&fit=crop');"></div>
-        <div class="feature-row-body">
-          <h3>Benessere</h3>
-          <p>L'alimentazione fa parte dell'esperienza! Nel nostro Food Court trovi opzioni vegan-friendly, trattamenti, camminate nella natura piemontese e cerimonie del cacao — sempre preparate con amore.</p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<!-- BIGLIETTI -->
-<section class="section section--soft">
-  <div class="container">
-    <div class="section-header">
-      <h2>2 giorni di esperienze indimenticabili</h2>
-    </div>
-    <div class="pricing">
-      <div class="price-card featured">
-        <span class="price-badge">Promozione</span>
-        <h3>Pass 2 giorni Yoga Soul Festival 2026</h3>
-        <div class="price-amount"><small>€</small>90</div>
-        <a href="iscrizioni.html" class="btn btn-primary">Compra biglietto</a>
-      </div>
-      <div class="price-card">
-        <span class="price-badge">Promozione</span>
-        <h3>Pass giornaliero sabato Yoga Soul Festival 2026</h3>
-        <div class="price-amount"><small>€</small>60</div>
-        <a href="iscrizioni.html" class="btn btn-dark">Compra biglietto</a>
-      </div>
-      <div class="price-card">
-        <span class="price-badge">Promozione</span>
-        <h3>Pass giornaliero domenica Yoga Soul Festival 2026</h3>
-        <div class="price-amount"><small>€</small>60</div>
-        <a href="iscrizioni.html" class="btn btn-orange">Compra biglietto</a>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- ARTISTI PREVIEW -->
-<section class="section section--gradient-alt">
-  <div class="container">
-    <div class="section-header">
-      <h2>Conosci alcuni degli artisti</h2>
-      <p class="lead">Uno spazio dove l'anima fiorisce, la vita si celebra in sorrisi e l'amore prevale!</p>
-    </div>
-    <div class="card-grid" style="grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));">
-      <article class="teacher">
-        <div class="teacher-image" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=600&q=80&auto=format&fit=crop');"></div>
-        <div class="teacher-body">
-          <div class="teacher-name">Maria Lotto</div>
-          <div class="teacher-role">Conferenze</div>
-          <p class="teacher-bio">Facilitatrice di percorsi interiori, lavora con il corpo e la voce.</p>
-        </div>
-      </article>
-      <article class="teacher">
-        <div class="teacher-image" style="background-image: url('https://images.unsplash.com/photo-1508214751196-bcfd4ca60f91?w=600&q=80&auto=format&fit=crop');"></div>
-        <div class="teacher-body">
-          <div class="teacher-name">Rachele Singh</div>
-          <div class="teacher-role">Musica · Kirtan</div>
-          <p class="teacher-bio">Voce e armonio, accompagna kirtan da oltre dieci anni in Europa.</p>
-        </div>
-      </article>
-      <article class="teacher">
-        <div class="teacher-image" style="background-image: url('https://images.unsplash.com/photo-1531123897727-8f129e1688ce?w=600&q=80&auto=format&fit=crop');"></div>
-        <div class="teacher-body">
-          <div class="teacher-name">Swami Akash</div>
-          <div class="teacher-role">Conferenze</div>
-          <p class="teacher-bio">Bhakti yoga e insegnamenti vedici. Della famiglia Bhakti Marga.</p>
-        </div>
-      </article>
-      <article class="teacher">
-        <div class="teacher-image" style="background-image: url('https://images.unsplash.com/photo-1573497019940-1c28c88b4f3e?w=600&q=80&auto=format&fit=crop');"></div>
-        <div class="teacher-body">
-          <div class="teacher-name">Sofia Mano</div>
-          <div class="teacher-role">Yoga</div>
-          <p class="teacher-bio">Hatha e yin yoga, con focus sul respiro e l'ascolto del corpo.</p>
-        </div>
-      </article>
-    </div>
-    <div style="text-align: center; margin-top: 3rem;">
-      <a href="insegnanti.html" class="btn btn-cream">Vedi tutti gli artisti</a>
-    </div>
-  </div>
-</section>
-
-<!-- TESTIMONIALS -->
-<section class="section section--soft">
-  <div class="container">
-    <div class="section-header">
-      <h2>Cosa dicono di noi!</h2>
-      <p class="lead">Un luogo unico, dove ci si sente accolti, integrati e felici… Sì, felici!</p>
-    </div>
-    <div class="testimonials testimonials--light">
-      <div class="testimonial">
-        <blockquote>Festival da non perdere! Musica, allegria, senza alcool né droghe. Lo raccomando per tutte le età.</blockquote>
-        <div class="testimonial-author">
-          <div class="testimonial-author-img" style="background-image: url('https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=200&q=80&auto=format&fit=crop');"></div>
-          <div>
-            <div class="testimonial-author-name">Anna S.</div>
-            <div class="testimonial-author-loc">Google · Edizione 2026</div>
+  <main>
+    <section class="home-hero">
+      <div class="container">
+        <div class="home-hero-box">
+          <p class="eyebrow" style="color: rgba(255,255,255,0.85);">26–27 Settembre 2026 · Orbassano, TO</p>
+          <h1 class="hero-title display-serif">YOGA SOUL<br><span class="outline">FESTIVAL</span></h1>
+          <p class="hero-subtitle">Due giorni per riconnetterti con la tua essenza attraverso yoga, meditazione, musica e saggezza vedic. Un'esperienza di benessere, comunità e trasformazione.</p>
+          <div class="hero-actions">
+            <a href="biglietti.html" class="btn" style="background:#fff;color:var(--color-charcoal);">Acquista biglietti →</a>
+            <a href="programma.html" class="btn btn-outline-white">Scopri l'esperienza</a>
           </div>
         </div>
       </div>
-      <div class="testimonial">
-        <blockquote>Il miglior festival yoga in Italia. Cura, qualità, comunità. Adoro!</blockquote>
-        <div class="testimonial-author">
-          <div class="testimonial-author-img" style="background-image: url('https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=200&q=80&auto=format&fit=crop');"></div>
+    </section>
+
+    <div class="marquee" aria-hidden="true">
+      <div class="marquee-track">
+        <span>Musica</span><span>·</span><span>Meditazione</span><span>·</span><span>Workshop</span><span>·</span><span>Cucina veg</span><span>·</span><span>Talk</span><span>·</span><span>Yoga</span><span>·</span>
+        <span>Musica</span><span>·</span><span>Meditazione</span><span>·</span><span>Workshop</span><span>·</span><span>Cucina veg</span><span>·</span><span>Talk</span><span>·</span><span>Yoga</span><span>·</span>
+      </div>
+    </div>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
           <div>
-            <div class="testimonial-author-name">Mariana V.</div>
-            <div class="testimonial-author-loc">Google · Edizione 2025</div>
+            <h2>Vivi la <span class="highlight-pink">tua</span> esperienza.</h2>
+            <p>Scopri le attività che ti aspettano in questi due giorni di festival.</p>
+          </div>
+        </div>
+        <div class="experience-bento">
+          <article class="bento-card bento-card--1" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.65) 100%), url('https://images.unsplash.com/photo-1506126613408-eca07ce68773?w=800&q=80');">
+            <h3>Meditazione</h3>
+          </article>
+          <article class="bento-card bento-card--2" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.65) 100%), url('https://images.unsplash.com/photo-1518611012118-696072aa579a?w=800&q=80');">
+            <h3>Workshop</h3>
+          </article>
+          <article class="bento-card bento-card--3" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.65) 100%), url('https://images.unsplash.com/photo-1475721027865-a073e5b6e960?w=800&q=80');">
+            <h3>Talks</h3>
+          </article>
+          <article class="bento-card bento-card--4" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.65) 100%), url('https://images.unsplash.com/photo-1511671782779-c97d3d27a1d4?w=800&q=80');">
+            <h3>Musica</h3>
+          </article>
+          <article class="bento-card bento-card--5" style="background-image: linear-gradient(180deg, rgba(0,0,0,0.1) 40%, rgba(0,0,0,0.65) 100%), url('https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?w=800&q=80');">
+            <h3>Yoga</h3>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="food-banner">
+          <div class="food-banner-content">
+            <h3 class="display-serif">Solo vegetale. Solo buono.</h3>
+            <p>Cucina veg curata con ingredienti freschi e di stagione. Per tutti i biglietti è incluso l'accesso all'area food del festival.</p>
+          </div>
+          <div class="food-banner-image" style="background-image: url('https://images.unsplash.com/photo-1512621776951-a57141f2eefd?w=900&q=80');"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Tre formule. <span class="highlight-orange">Una sola anima.</span></h2>
+          </div>
+          <a href="biglietti.html" class="section-head-link">Consulta il listino →</a>
+        </div>
+        <div class="pricing-home">
+          <article class="pricing-card pricing-card--a card">
+            <p class="price">18 <span>€</span></p>
+            <h3>1 giornata a tua scelta</h3>
+            <ul>
+              <li>Accesso attività FREE del giorno</li>
+              <li>Area vendors e cucina veg</li>
+              <li>Welcome kit di benvenuto</li>
+            </ul>
+            <a href="biglietti.html" class="btn btn-dark">Acquista →</a>
+          </article>
+          <article class="pricing-card pricing-card--b card">
+            <p class="price">18 <span>€</span></p>
+            <h3>Domenica 27 settembre</h3>
+            <ul>
+              <li>Accesso attività FREE del giorno</li>
+              <li>Area vendors e cucina veg</li>
+              <li>Welcome kit di benvenuto</li>
+            </ul>
+            <a href="biglietti.html" class="btn btn-dark">Acquista →</a>
+          </article>
+          <article class="pricing-card pricing-card--featured">
+            <p class="price">36 <span>€</span></p>
+            <h3>Pass intero — 2 giorni</h3>
+            <ul>
+              <li>Accesso a tutte le attività FREE</li>
+              <li>Welcome kit premium</li>
+              <li>Sconto 10% sui prodotti</li>
+            </ul>
+            <a href="biglietti.html" class="btn btn-dark">Acquista →</a>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="section-head">
+          <div>
+            <h2>Le voci. <span class="highlight-teal">I corpi.</span> La musica.</h2>
+          </div>
+          <a href="artisti.html" class="section-head-link">Vedi tutti gli artisti →</a>
+        </div>
+        <div class="artist-preview-grid">
+          <article class="artist-preview-card">
+            <div class="artist-preview-media" style="background-image: url('https://images.unsplash.com/photo-1517841905240-472988babdf9?w=600&q=80');"></div>
+            <div class="artist-preview-body">
+              <div class="artist-preview-tags"><span class="chip tag-yellow">Musica</span></div>
+              <h3 class="artist-preview-title highlight-teal">Michael Jackson</h3>
+              <p>Voce e Musico-terapeuta</p>
+            </div>
+          </article>
+          <article class="artist-preview-card">
+            <div class="artist-preview-media" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=600&q=80');"></div>
+            <div class="artist-preview-body">
+              <div class="artist-preview-tags"><span class="chip tag-pink">Talk</span></div>
+              <h3 class="artist-preview-title highlight-teal">Sia</h3>
+              <p>Foto reporter</p>
+            </div>
+          </article>
+          <article class="artist-preview-card">
+            <div class="artist-preview-media" style="background-image: url('https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=600&q=80');"></div>
+            <div class="artist-preview-body">
+              <div class="artist-preview-tags"><span class="chip tag-teal">Yoga</span></div>
+              <h3 class="artist-preview-title highlight-teal">Pino Daniele</h3>
+              <p>Vinyasa Yoga</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" style="padding-top:0;">
+      <div class="container">
+        <div class="sponsor-cta-banner">
+          <div class="sponsor-cta-photo" style="background-image: url('https://images.unsplash.com/photo-1531058020387-3d344d9969f5?w=1200&q=80');"></div>
+          <div class="sponsor-cta-overlay"></div>
+          <div class="sponsor-cta-content">
+            <h3 class="display-serif">Porta il tuo brand <span class="highlight-orange">dentro il festival.</span></h3>
+            <p>Visibilità, pubblico in target e networking con brand del settore benessere e veg.</p>
+            <a href="vendors.html" class="btn btn-dark" style="margin-top:16px;">Diventa vendor →</a>
           </div>
         </div>
       </div>
-      <div class="testimonial">
-        <blockquote>Festival molto speciale a due passi dalla città. Buona musica, attività alternative, cucina vegana deliziosa e soprattutto, buone vibrazioni!</blockquote>
-        <div class="testimonial-author">
-          <div class="testimonial-author-img" style="background-image: url('https://images.unsplash.com/photo-1544005313-94ddf0286df2?w=200&q=80&auto=format&fit=crop');"></div>
-          <div>
-            <div class="testimonial-author-name">Natacha P.</div>
-            <div class="testimonial-author-loc">Google · Edizione 2024</div>
-          </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand-title">Yoga Soul Festival</div>
+        <p class="footer-tagline">Due giorni per riconnetterti con la tua essenza. Orbassano (TO), 26–27 Settembre 2026.</p>
+        <p class="footer-riconnettiti">Riconnettiti.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Esplora</div>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="programma.html">Programma</a>
+          <a href="artisti.html">Artisti</a>
+          <a href="biglietti.html">Biglietti</a>
+          <a href="vendors.html">Vendors</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer-col-title">Contatti</div>
+        <p class="footer-tagline">email@yogasoulfestival.com</p>
+        <p class="footer-tagline">Orbassano — Torino — ITALIA</p>
+        <div class="footer-pills">
+          <span class="footer-pill">VEG</span>
+          <span class="footer-pill">BENESSERE</span>
+          <span class="footer-pill">2026</span>
         </div>
       </div>
     </div>
-  </div>
-</section>
+  </footer>
 
-<!-- CTA FINALE -->
-<section class="section section--soft">
-  <div class="container">
-    <div class="cta-banner">
-      <span class="eyebrow">I posti sono limitati</span>
-      <h2>Sei pronto per il weekend<br>che ti cambia il respiro?</h2>
-      <p>La prevendita è aperta ora. Unisciti alla comunità Yoga Soul Festival.</p>
-      <a href="iscrizioni.html" class="btn btn-primary">Compra il tuo biglietto</a>
-    </div>
-  </div>
-</section>
-
-<!-- FOOTER -->
-<footer class="footer">
-  <div class="container">
-    <div class="footer-grid">
-      <div class="footer-brand">
-        <div class="nav-logo" style="color: var(--color-cream);">
-          <span class="nav-logo-mark">
-            <img src="assets/logo-ysf.png" alt="" width="56" height="56">
-          </span>
-          <span style="color: var(--color-cream);">Yoga Soul Festival<small>Edizione 2026</small></span>
-        </div>
-        <p>Un festival di musica, yoga, conferenze e benessere nel cuore di Orbassano (TO). Un weekend per ritornare a casa, dentro di te.</p>
-      </div>
-      <div>
-        <h4>Festival</h4>
-        <ul>
-          <li><a href="index.html">Home</a></li>
-          <li><a href="programma.html">Programma</a></li>
-          <li><a href="insegnanti.html">Artisti</a></li>
-          <li><a href="iscrizioni.html">Biglietti</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Info</h4>
-        <ul>
-          <li><a href="contatti.html">Contatti</a></li>
-          <li><a href="sponsors.html">Sponsor</a></li>
-          <li><a href="iscrizioni.html#faq">Domande frequenti</a></li>
-          <li><a href="contatti.html#come-arrivare">Come arrivare</a></li>
-          <li><a href="contatti.html#alloggio">Alloggio</a></li>
-        </ul>
-      </div>
-      <div>
-        <h4>Contatti</h4>
-        <ul>
-          <li>info@yogasoulfestival.com</li>
-          <li>+39 333 123 4567</li>
-          <li>Cascina Soulèil<br>Orbassano (TO)</li>
-        </ul>
-      </div>
-    </div>
-    <div class="footer-bottom">
-      <div>© 2026 Yoga Soul Festival — Tutti i diritti riservati</div>
-      <div class="footer-social">
-        <a href="#" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
-        <a href="#" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
-        <a href="#" aria-label="YouTube"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22.54 6.42a2.78 2.78 0 00-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 00-1.94 2A29 29 0 001 11.75a29 29 0 00.46 5.33A2.78 2.78 0 003.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 001.94-2 29 29 0 00.46-5.25 29 29 0 00-.46-5.33z"/><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02" fill="currentColor"/></svg></a>
-      </div>
-    </div>
-  </div>
-</footer>
-
-<script src="script.js"></script>
+  <script src="script.js"></script>
 </body>
 </html>

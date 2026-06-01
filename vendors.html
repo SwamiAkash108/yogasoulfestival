@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vendors — Yoga Soul Festival</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header class="navbar">
+    <div class="container navbar-inner">
+      <a href="index.html" class="navbar-logo">
+        <img src="assets/logo-ysf.png" alt="Yoga Soul Festival" width="40" height="40">
+        Yoga Soul Festival
+      </a>
+      <button class="nav-toggle" type="button" aria-label="Menu" aria-expanded="false">
+        <span></span><span></span><span></span>
+      </button>
+      <nav class="navbar-links">
+        <a href="index.html" class="navbar-link">Home</a>
+        <a href="programma.html" class="navbar-link">Programma</a>
+        <a href="artisti.html" class="navbar-link">Artisti</a>
+        <a href="biglietti.html" class="navbar-link">Biglietti</a>
+        <a href="vendors.html" class="navbar-link is-active">Vendors</a>
+        <a href="faq.html" class="navbar-link">FAQ</a>
+      </nav>
+      <a href="biglietti.html" class="btn btn-gradient navbar-cta">Acquista →</a>
+    </div>
+  </header>
+
+  <main>
+    <section class="section" style="padding-bottom:0;">
+      <div class="container">
+        <div class="vendors-hero-overlay" style="background-image: url('https://images.unsplash.com/photo-1531058020387-3d344d9969f5?w=1400&q=80'); background-size: cover; background-position: center;">
+          <div>
+            <p class="eyebrow" style="color:rgba(255,255,255,0.85);">— Vendors —</p>
+            <h1>Porta il tuo brand al festival.</h1>
+            <p>Registrati per avere visibilità nel festival o prenotare uno stand. Contattaci per scoprire le opzioni disponibili per il tuo brand.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container vendors-two-col">
+        <div class="vendors-benefits">
+          <h2 class="display-serif" style="font-size:clamp(24px,3vw,32px);">Cosa offriamo</h2>
+          <ul>
+            <li><span style="color:var(--color-teal-primary);font-weight:800;">✓</span> Spazio espositivo personalizzabile</li>
+            <li><span style="color:var(--color-teal-primary);font-weight:800;">✓</span> Visibilità sui canali ufficiali</li>
+            <li><span style="color:var(--color-teal-primary);font-weight:800;">✓</span> Pubblico in target con benessere e veg</li>
+            <li><span style="color:var(--color-teal-primary);font-weight:800;">✓</span> Inserimento nella mappa del festival</li>
+            <li><span style="color:var(--color-teal-primary);font-weight:800;">✓</span> Networking con altri brand del settore</li>
+          </ul>
+          <p style="margin-top:16px;font-style:italic;font-size:14px;">🌱 Prediligiamo realtà etiche, veg-friendly e sostenibili.</p>
+        </div>
+
+        <form class="vendors-form" action="#" method="post">
+          <h2 class="display-serif" style="font-size:clamp(24px,3vw,32px);">Pre-iscrizione</h2>
+          <div>
+            <label for="nome">Nome e cognome</label>
+            <input id="nome" name="nome" type="text" required>
+          </div>
+          <div>
+            <label for="brand">Nome del brand/attività</label>
+            <input id="brand" name="brand" type="text" required>
+          </div>
+          <div style="display:grid;grid-template-columns:1fr 1fr;gap:10px;">
+            <div>
+              <label for="email">Email</label>
+              <input id="email" name="email" type="email" required>
+            </div>
+            <div>
+              <label for="telefono">Telefono (facoltativo)</label>
+              <input id="telefono" name="telefono" type="tel">
+            </div>
+          </div>
+          <div>
+            <label for="tipo">Tipo di presenza</label>
+            <select id="tipo" name="tipo" required>
+              <option value="">Seleziona...</option>
+              <option value="stand">Stand espositivo</option>
+              <option value="food">Food &amp; beverage</option>
+              <option value="sponsor">Sponsor</option>
+            </select>
+          </div>
+          <div>
+            <label for="descrizione">Raccontaci la tua attività</label>
+            <textarea id="descrizione" name="descrizione" placeholder="Max 500 caratteri" maxlength="500"></textarea>
+          </div>
+          <button type="submit" class="btn btn-dark" style="width:auto;">Invia richiesta ✈</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <div class="footer-brand-title">Yoga Soul Festival</div>
+        <p class="footer-tagline">Due giorni per riconnetterti con la tua essenza. Orbassano (TO), 26–27 Settembre 2026.</p>
+        <p class="footer-riconnettiti">Riconnettiti.</p>
+      </div>
+      <div>
+        <div class="footer-col-title">Esplora</div>
+        <nav class="footer-links">
+          <a href="index.html">Home</a>
+          <a href="programma.html">Programma</a>
+          <a href="artisti.html">Artisti</a>
+          <a href="biglietti.html">Biglietti</a>
+          <a href="vendors.html">Vendors</a>
+          <a href="faq.html">FAQ</a>
+        </nav>
+      </div>
+      <div>
+        <div class="footer-col-title">Contatti</div>
+        <p class="footer-tagline">email@yogasoulfestival.com</p>
+        <p class="footer-tagline">Orbassano — Torino — ITALIA</p>
+        <div class="footer-pills">
+          <span class="footer-pill">VEG</span>
+          <span class="footer-pill">BENESSERE</span>
+          <span class="footer-pill">2026</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
