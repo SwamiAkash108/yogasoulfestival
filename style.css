@@ -319,8 +319,9 @@ p {
   justify-self: center;
   display: inline-flex;
   align-items: center;
-  gap: 6px;
-  padding: 6px;
+  gap: 4px;
+  min-height: 65px;
+  padding: 10px;
   border-radius: var(--radius-pill);
   background: rgba(255, 255, 255, 0.4);
   backdrop-filter: blur(8px);
@@ -329,12 +330,12 @@ p {
 }
 
 .navbar-link {
-  padding: 12px 18px;
+  padding: 10px 16px;
   border-radius: var(--radius-pill);
   font-family: var(--font-body);
-  font-size: 14px;
-  font-weight: 500;
-  color: var(--color-muted);
+  font-size: 16px;
+  font-weight: 400;
+  color: var(--color-text);
   transition: background var(--transition), color var(--transition);
 }
 
@@ -345,6 +346,7 @@ p {
 .navbar-link.is-active {
   background: var(--color-text);
   color: var(--color-white);
+  font-weight: 600;
 }
 
 .navbar-cta {
