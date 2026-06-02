@@ -39,12 +39,6 @@
   border: 1px solid rgba(255, 255, 255, 0.6);
 }
 
-.page-home .navbar-cta {
-  min-height: 61px;
-  padding: 0 22px;
-  font-size: 20px;
-}
-
 /* ── Hero ── */
 .page-home .home-hero {
   margin-top: 0;
@@ -61,28 +55,36 @@
   margin-inline: 0;
   border-radius: 50px;
   min-height: 928px;
-  padding: 160px 80px 120px;
-  /* Gradient Figma (451:775). Onde: asset su ::before quando disponibile. */
-  background: radial-gradient(
-    ellipse 101.67% 101.55% at 0% 4.77%,
-    #d69e2e 0%,
-    #d53f8c 100%
-  );
+  /* Figma hero frame: 1200×928, padding 80 vert / 160 oriz, gap 48 */
+  padding: 80px 160px;
+  /* Fill (dal basso): Radial 100% → Image acquerello 20% sopra */
+  background: var(--gradient-hero);
+  background-color: #faf6f0;
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  align-items: stretch;
+  align-items: flex-start;
   justify-content: flex-start;
 }
 
-.page-home .home-hero-box::before,
-.page-home .home-hero-box::after {
-  display: none;
+.page-home .home-hero-box::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  border-radius: inherit;
+  pointer-events: none;
+  background: url("assets/figma/homepage-hero.png") center / cover no-repeat;
+  opacity: 0.2;
 }
 
 .page-home .hero-inner {
   position: relative;
   z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
   width: 100%;
   max-width: 1040px;
 }
@@ -90,7 +92,7 @@
 .page-home .hero-meta {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: flex-start;
   flex-wrap: wrap;
   gap: 16px;
   margin: 0;
@@ -113,11 +115,16 @@
   display: block;
   width: min(100%, 1022px);
   height: auto;
-  margin: 48px auto 0;
+  margin: 0;
 }
 
 .page-home .hero-copy {
-  margin-top: 48px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 48px;
+  width: 100%;
+  margin: 0;
 }
 
 .page-home .hero-subtitle {
@@ -132,34 +139,11 @@
 }
 
 .page-home .hero-actions {
-  margin-top: 48px;
+  margin: 0;
   display: flex;
   flex-wrap: wrap;
   justify-content: flex-start;
   gap: 24px;
-}
-
-.page-home .btn-white {
-  min-height: 61px;
-  padding: 0 28px;
-  background: #fff;
-  color: #333;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.page-home .btn-outline-white {
-  min-height: 61px;
-  padding: 0 28px;
-  border: 1px solid #fff;
-  background: transparent;
-  color: #fff;
-  font-size: 20px;
-  font-weight: 600;
-}
-
-.page-home .btn-outline-white:hover {
-  background: rgba(255, 255, 255, 0.12);
 }
 
 /* ── Marquee ── */
@@ -193,7 +177,7 @@
   line-height: 1.2;
 }
 
-@media (min-width: 901px) {
+@media (min-width: 769px) {
   .page-home .marquee-track {
     animation: home-marquee 42s linear infinite;
   }
@@ -270,22 +254,6 @@
 .page-home .c-pink { color: #d75062; }
 .page-home .c-orange { color: #dd6b20; }
 .page-home .c-teal { color: #10767b; }
-
-.page-home .btn-outline-dark {
-  min-height: 61px;
-  padding: 0 24px;
-  border: 1px solid #333;
-  background: transparent;
-  color: #333;
-  font-size: 20px;
-  font-weight: 600;
-  white-space: nowrap;
-  flex-shrink: 0;
-}
-
-.page-home .btn-outline-dark:hover {
-  background: rgba(51, 51, 51, 0.05);
-}
 
 /* ── Bento (Figma: 624 | 16 | 390, rows 255 + gap + 255 + gap + 255) ── */
 .page-home .bento {
@@ -368,17 +336,72 @@
   font-size: 48px;
 }
 
-/* Food — inside experience section, 48px below bento */
+/* Food — Figma 435:385: foto + linear gradient sopra + testo */
 .page-home .food-figure {
+  position: relative;
   margin: var(--inner-gap) 0 0;
   border-radius: 30px;
   overflow: hidden;
+  aspect-ratio: 1030 / 387;
+  background: #2c2419;
 }
 
-.page-home .food-figure img {
+.page-home .food-figure__img {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
+}
+
+.page-home .food-figure::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  pointer-events: none;
+  background: var(--banner-scrim);
+}
+
+.page-home .food-figure__body {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+  margin: 0;
+  padding: clamp(28px, 5vw, 52px);
+  color: var(--color-white);
+}
+
+.page-home .food-figure__icon {
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+
+.page-home .food-figure__title {
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--color-white);
+}
+
+.page-home .food-figure__text {
+  margin: 0;
+  max-width: 42ch;
+  font-family: var(--font-body);
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
 }
 
 /* ── Tickets (Figma exports) ── */
@@ -524,13 +547,16 @@
   color: var(--color-muted);
 }
 
-/* ── Vendor banner ── */
+/* ── Vendor banner: foto + scrim + testo (tutti i breakpoint) ── */
 .page-home .vendor-banner {
+  position: relative;
   display: block;
   border-radius: 30px;
   overflow: hidden;
   text-decoration: none;
-  color: inherit;
+  color: var(--color-white);
+  background: #2c2419;
+  aspect-ratio: 1088 / 474;
   transition: transform var(--transition), box-shadow var(--transition);
 }
 
@@ -540,31 +566,95 @@
 }
 
 .page-home .vendor-banner__media {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
   display: block;
+  width: 100%;
+  height: 100%;
   line-height: 0;
 }
 
 .page-home .vendor-banner__media img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
+  object-position: center;
   display: block;
 }
 
 .page-home .vendor-banner__card {
-  display: none;
+  position: absolute;
+  inset: 0;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  gap: 12px;
+  padding: clamp(28px, 5vw, 52px);
+  box-sizing: border-box;
+}
+
+.page-home .vendor-banner__card::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+  background: var(--banner-scrim);
+}
+
+.page-home .vendor-banner__icon {
+  position: relative;
+  z-index: 1;
+  width: 28px;
+  height: 28px;
+  filter: brightness(0) invert(1);
+}
+
+.page-home .vendor-banner__title {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  font-family: var(--font-display);
+  font-size: clamp(28px, 4vw, 44px);
+  font-weight: 700;
+  line-height: 1.08;
+  letter-spacing: -0.01em;
+  color: var(--color-white);
+}
+
+.page-home .vendor-banner__title-accent {
+  color: var(--color-white);
+}
+
+.page-home .vendor-banner__text {
+  position: relative;
+  z-index: 1;
+  margin: 0;
+  max-width: 42ch;
+  font-family: var(--font-body);
+  font-size: clamp(15px, 2vw, 18px);
+  font-weight: 500;
+  line-height: 1.5;
+  color: rgba(255, 255, 255, 0.92);
+}
+
+.page-home .vendor-banner__cta {
+  position: relative;
+  z-index: 1;
+  flex: none;
+  align-self: flex-start;
+  width: auto;
+  margin-top: 4px;
 }
 
 /* ── Responsive ── */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   .page-home {
     --section-gap: 72px;
     --inner-gap: 32px;
-  }
-
-  .page-home .navbar-cta {
-    min-height: 44px;
-    padding: 0 14px;
-    font-size: 14px;
   }
 
   .page-home .navbar-links:not(.is-open) {
@@ -586,8 +676,12 @@
 
   .page-home .home-hero-box {
     min-height: auto;
-    padding: 64px 28px 48px;
+    padding: 64px 28px;
     border-radius: 28px;
+  }
+
+  .page-home .hero-inner {
+    gap: 32px;
   }
 
   .page-home .hero-meta {
@@ -599,12 +693,8 @@
     height: 28px;
   }
 
-  .page-home .hero-title-img {
-    margin-top: 32px;
-  }
-
   .page-home .hero-copy {
-    margin-top: 32px;
+    gap: 28px;
   }
 
   .page-home .hero-subtitle {
@@ -618,11 +708,8 @@
     gap: 12px;
   }
 
-  .page-home .btn-white,
-  .page-home .btn-outline-white {
-    min-height: 52px;
-    padding: 0 22px;
-    font-size: 17px;
+  .page-home .hero-actions .btn-white,
+  .page-home .hero-actions .btn-outline-white {
     flex: 1 1 auto;
     justify-content: center;
   }
@@ -640,8 +727,6 @@
 
   .page-home .btn-outline-dark {
     width: 100%;
-    min-height: 52px;
-    font-size: 17px;
     white-space: normal;
     text-align: center;
   }
@@ -652,7 +737,7 @@
   }
 
   .page-home .marquee-track {
-    animation: home-marquee 36s linear infinite;
+    animation: home-marquee 58s linear infinite;
     width: max-content;
     flex-wrap: nowrap;
     gap: 3rem;
@@ -751,18 +836,6 @@
   .page-home .ticket-figma__btn {
     align-self: flex-start;
     margin-top: auto;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    min-height: 52px;
-    padding: 0 22px;
-    border-radius: var(--radius-pill);
-    background: var(--color-text);
-    color: var(--color-white);
-    font-family: var(--font-body);
-    font-size: 17px;
-    font-weight: 600;
-    line-height: 1;
   }
 
   .page-home .food-figure,
@@ -774,68 +847,54 @@
   }
 
   .page-home .vendor-banner {
+    aspect-ratio: auto;
+    min-height: clamp(300px, 92vw, 360px);
     border-radius: 24px;
-    overflow: visible;
-    box-shadow: none;
   }
 
-  .page-home .vendor-banner:hover {
-    transform: none;
-    box-shadow: none;
-  }
-
-  .page-home .vendor-banner__media {
-    display: none;
+  .page-home .vendor-banner__media img {
+    object-position: 72% center;
   }
 
   .page-home .vendor-banner__card {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 14px;
-    padding: 28px 24px;
-    background: rgba(214, 158, 46, 0.12);
-    border: 1px solid rgba(214, 158, 46, 0.32);
-    border-radius: 24px;
-    box-shadow: var(--shadow-sm);
+    padding: 24px 20px;
+    justify-content: flex-end;
+    gap: 10px;
   }
 
-  .page-home .vendor-banner__title {
-    margin: 0;
-    font-family: var(--font-display);
-    font-size: clamp(28px, 7.5vw, 36px);
-    font-weight: 700;
-    line-height: 1.08;
-    letter-spacing: -0.01em;
-    color: var(--color-text);
-  }
-
-  .page-home .vendor-banner__title-accent {
-    color: var(--color-yellow);
-  }
-
+  .page-home .vendor-banner__title,
   .page-home .vendor-banner__text {
-    margin: 0;
-    font-family: var(--font-body);
-    font-size: 16px;
-    font-weight: 500;
-    line-height: 1.5;
-    color: var(--color-text);
+    flex-shrink: 1;
+    min-width: 0;
   }
 
   .page-home .vendor-banner__cta {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
+    flex-shrink: 0;
+  }
+
+  .page-home .vendor-banner__card::before {
+    background: linear-gradient(
+      90deg,
+      rgba(0, 0, 0, 0.9) 0%,
+      rgba(0, 0, 0, 0.72) 42%,
+      rgba(0, 0, 0, 0.28) 62%,
+      transparent 82%
+    );
+  }
+
+  .page-home .vendor-banner__title {
+    font-size: clamp(24px, 7vw, 34px);
+    line-height: 1.1;
+  }
+
+  .page-home .vendor-banner__text {
+    max-width: none;
+    font-size: 15px;
+    line-height: 1.45;
+  }
+
+  .page-home .vendor-banner__cta {
     margin-top: 6px;
-    min-height: 52px;
-    padding: 0 22px;
-    border-radius: var(--radius-pill);
-    background: var(--color-text);
-    color: var(--color-white);
-    font-family: var(--font-body);
-    font-size: 17px;
-    font-weight: 600;
   }
 
   .page-home .food-figure,
@@ -843,7 +902,6 @@
     border-radius: 20px;
   }
 
-  /* Vendor banner: mobile text card (image unreadable at small sizes) */
   .page-home .bento {
     grid-template-columns: 1fr 1fr;
     grid-template-rows: auto;
@@ -883,7 +941,7 @@
   }
 }
 
-@media (max-width: 640px) {
+@media (max-width: 576px) {
   .page-home {
     --section-gap: 56px;
     --inner-gap: 24px;
@@ -895,8 +953,12 @@
   }
 
   .page-home .home-hero-box {
-    padding: 48px 20px 40px;
+    padding: 48px 20px;
     border-radius: 24px;
+  }
+
+  .page-home .hero-inner {
+    gap: 24px;
   }
 
   .page-home .hero-meta {
@@ -908,12 +970,8 @@
     display: none;
   }
 
-  .page-home .hero-title-img {
-    margin-top: 24px;
-  }
-
   .page-home .hero-copy {
-    margin-top: 24px;
+    gap: 20px;
   }
 
   .page-home .hero-subtitle {
@@ -926,8 +984,8 @@
     align-items: stretch;
   }
 
-  .page-home .btn-white,
-  .page-home .btn-outline-white {
+  .page-home .hero-actions .btn-white,
+  .page-home .hero-actions .btn-outline-white {
     width: 100%;
   }
 
@@ -970,28 +1028,33 @@
   }
 
   .page-home .food-figure,
-  .page-home .vendor-banner__card {
-    border-radius: 16px;
+  .page-home .vendor-banner {
+    border-radius: 20px;
+  }
+
+  .page-home .vendor-banner {
+    min-height: clamp(320px, 105vw, 400px);
   }
 
   .page-home .vendor-banner__card {
-    padding: 24px 20px;
-    gap: 12px;
+    padding: 20px 16px 18px;
+    gap: 8px;
+  }
+
+  .page-home .vendor-banner__icon {
+    width: 24px;
+    height: 24px;
   }
 
   .page-home .vendor-banner__title {
-    font-size: clamp(26px, 8vw, 32px);
+    font-size: clamp(22px, 6.5vw, 28px);
   }
 
   .page-home .vendor-banner__text {
-    font-size: 15px;
+    font-size: 14px;
+    line-height: 1.4;
   }
 
-  .page-home .vendor-banner__cta {
-    width: 100%;
-    min-height: 50px;
-    font-size: 16px;
-  }
 
   .page-home .ticket-figma {
     border-radius: 16px;
@@ -1015,12 +1078,14 @@
     min-height: 64px;
   }
 
+  .page-home .marquee-track {
+    animation: home-marquee 68s linear infinite;
+  }
+
   .page-home .marquee-text {
     font-size: clamp(20px, 6vw, 26px);
   }
-}
 
-@media (max-width: 600px) {
   .page-home .home-section {
     padding: var(--section-gap) 0;
   }

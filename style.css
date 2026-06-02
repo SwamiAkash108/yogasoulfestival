@@ -22,8 +22,20 @@
   --color-beige: #fafaf9;
 
   --gradient-cta: linear-gradient(135deg, #d53f8c 0%, #d69e2e 100%);
-  --gradient-hero: radial-gradient(ellipse at 0% 5%, #d69e2e 0%, #d53f8c 100%);
+  --gradient-hero: radial-gradient(
+    ellipse 101.67% 101.55% at 0% 4.77%,
+    #d69e2e 0%,
+    #d53f8c 100%
+  );
   --gradient-riconnettiti: linear-gradient(90deg, #dd6b20 0%, #d53f8c 100%);
+  /* Figma banner scrim: linear sopra la foto (es. food 435:385) */
+  --banner-scrim: linear-gradient(
+    90deg,
+    rgba(0, 0, 0, 0.84) 0%,
+    rgba(0, 0, 0, 0.58) 28%,
+    rgba(0, 0, 0, 0.16) 50%,
+    transparent 68%
+  );
 
   --font-display: "Space Grotesk", sans-serif;
   --font-body: "Plus Jakarta Sans", sans-serif;
@@ -37,6 +49,9 @@
   --radius-card-sm: 20px;
   --radius-pill: 50px;
   --btn-height: 61px;
+  --btn-pad-x: 28px;
+  --btn-font-size: 20px;
+  --btn-min-width-cta: 150px;
   --shadow-sm: 0 4px 20px rgba(51, 51, 51, 0.06);
   --shadow-md: 0 12px 32px rgba(51, 51, 51, 0.1);
 
@@ -198,14 +213,16 @@ p {
   justify-content: center;
   gap: 10px;
   min-height: var(--btn-height);
-  padding: 0 28px;
+  padding: 0 var(--btn-pad-x);
   border-radius: var(--radius-pill);
   border: 1px solid transparent;
   cursor: pointer;
   font-family: var(--font-body);
-  font-size: 15px;
+  font-size: var(--btn-font-size);
   font-weight: 600;
   letter-spacing: 0.01em;
+  line-height: 1.2;
+  text-align: center;
   transition:
     transform var(--transition),
     box-shadow var(--transition),
@@ -257,6 +274,20 @@ p {
 .btn-outline:hover {
   border-color: var(--color-teal);
   color: var(--color-teal);
+}
+
+.btn-outline-dark {
+  background: transparent;
+  border-color: var(--color-text);
+  color: var(--color-text);
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+
+.btn-outline-dark:hover {
+  background: rgba(51, 51, 51, 0.05);
+  border-color: var(--color-text);
+  color: var(--color-text);
 }
 
 /* Navbar / Topbar */
@@ -460,8 +491,8 @@ p {
   content: "";
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  z-index: 0;
+  background: url("assets/figma/homepage-hero.png") center / cover no-repeat;
   opacity: 0.2;
   pointer-events: none;
 }
@@ -969,9 +1000,7 @@ p {
 
 .inner-page-cta {
   flex-shrink: 0;
-  min-width: 150px;
-  min-height: 61px;
-  font-size: 20px;
+  min-width: var(--btn-min-width-cta);
 }
 
 .page-biglietti .inner-page-header--tickets {
@@ -1288,9 +1317,7 @@ h3.program-day-header {
 .ticket-card-btn {
   align-self: flex-start;
   margin-top: 24px;
-  min-width: 150px;
-  min-height: 61px;
-  font-size: 20px;
+  min-width: var(--btn-min-width-cta);
 }
 
 .welcome-kit-bar {
@@ -1375,8 +1402,7 @@ h3.program-day-header {
 .vendors-hero-bg {
   position: absolute;
   inset: 0;
-  background-size: cover;
-  background-position: center;
+  background: center / cover no-repeat url("assets/figma/vendors-hero.png");
 }
 
 .vendors-hero-scrim {
@@ -1409,7 +1435,7 @@ h3.program-day-header {
   font-weight: 700;
   line-height: 59px;
   letter-spacing: 0.12em;
-  color: var(--color-text);
+  color: var(--color-white);
 }
 
 .page-vendors .vendors-subtext {
@@ -1548,9 +1574,7 @@ h3.program-day-header {
 .vendors-submit {
   justify-self: start;
   min-width: 195px;
-  min-height: 61px;
   margin-top: 8px;
-  font-size: 20px;
 }
 
 .vendors-form-row {
@@ -1730,9 +1754,12 @@ h3.program-day-header {
 }
 
 /* Responsive */
-@media (max-width: 900px) {
+@media (max-width: 768px) {
   :root {
     --mobile-nav-height: 72px;
+    --btn-height: 52px;
+    --btn-pad-x: 22px;
+    --btn-font-size: 17px;
   }
 
   .navbar,
@@ -1830,9 +1857,6 @@ h3.program-day-header {
     flex: 0 0 auto;
     justify-self: end;
     width: auto;
-    min-height: 44px;
-    padding: 0 14px;
-    font-size: 14px;
     white-space: nowrap;
   }
 
@@ -1944,7 +1968,7 @@ h3.program-day-header {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 576px) {
   .section {
     padding: 44px 0;
   }
@@ -1963,7 +1987,8 @@ h3.program-day-header {
 
   .navbar-cta,
   .ticket-card-btn,
-  .vendors-submit {
+  .vendors-submit,
+  .page-home .vendor-banner__cta {
     width: auto;
   }
 

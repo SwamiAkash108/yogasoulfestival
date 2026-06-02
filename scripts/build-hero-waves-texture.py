@@ -9,7 +9,7 @@ from PIL import Image
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 FIGMA = os.path.join(ROOT, "assets", "figma")
-SRC = os.path.join(FIGMA, "hero-box-export.png")
+SRC = os.path.join(FIGMA, "homepage-hero.png")
 TEX_OUT = os.path.join(FIGMA, "hero-waves-texture.png")
 BG_OUT = os.path.join(FIGMA, "hero-bg-composite.png")
 
